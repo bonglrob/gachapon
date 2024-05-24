@@ -6,30 +6,25 @@ import Image from "next/image";
 import coinImage from '../../../public/img/money_coin_reiwa_100.png';
 import styles from '../page.module.css';
 
-export default function Coin(){
+export default function Coin({ isClicked, setIsClicked}){
 
   const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isClicked, setIsClicked] = useState(false);
 
   useEffect(() => {
     const updatePosition = (e: MouseEvent) => {
-      if (isClicked) {
-        setPosition({ x: e.clientX, y: e.clientY })
-      }
+      setPosition({ x: e.clientX, y: e.clientY })
     };
 
     if (isClicked) {
-      window.addEventListener("mousemove", updatePosition);
+      window.addEventListener('mousemove', updatePosition);
+    } else {
+      window.removeEventListener('mousemove', updatePosition);
     }
 
     return () => {
       window.removeEventListener("mousemove", updatePosition);
     };
    }, [isClicked]);
-
-  const handleClick = () => {
-    setIsClicked(true);
-  };
 
 
   return (
@@ -38,7 +33,9 @@ export default function Coin(){
         src={coinImage}
         alt="picture of 100 yen coin"
         className={styles.coin}
-        onClick={handleClick}
+        onClick={() => {
+          setIsClicked(true);
+        }}
       />
     </div>
   );

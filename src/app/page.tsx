@@ -1,16 +1,19 @@
-import Image from "next/image";
-import gachaponPic from '../../public/img/gachapon.png';
+'use client';
+
 import styles from "./page.module.css";
 import Coin from "./components/coin";
+import { useState } from "react";
+import Gachapon from "./components/gachapon";
 // import { Typography, Button } from "@mui/material";
 
 
 export default function Home() {
+  const [isClicked, setIsClicked] = useState(false);
 
   return (
       <main className={styles.main}>
         {/* <div>
-          <Button variant="contained">
+          <Button onClick={console.log('button pressed')} variant="contained">
             ただ実験テストなんだよ！ Gachapon
           </Button>
         </div>
@@ -18,27 +21,11 @@ export default function Home() {
           <Typography variant="h4" sx={{ background: 'red' }}>ありがとう！This is fun?笑</Typography>
         </div> */}
 
-        {/* <div className={styles.alignRight}>
-          <Image
-            src={coinImage}
-            alt="picture of 100 yen coin"
-            className={styles.coin}
-          />
-        </div> */}
+        <Coin isClicked={isClicked} setIsClicked={setIsClicked}></Coin>
 
-        <Coin></Coin>
-        <div className={styles.center}>
-          <Image
-            src={gachaponPic}
-            alt="picture of gachapon machine"
-            className={styles.gachapon}
-            // width={533} //533
-            // height={742} //742
-            priority
-          />
-        </div>
+        <Gachapon isClicked={isClicked} setIsClicked={setIsClicked}></Gachapon>
 
-        <div className={styles.grid}>
+        {/* <div className={styles.grid}>
           <a
             href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
             className={styles.card}
@@ -88,7 +75,7 @@ export default function Home() {
               初めまして。この言葉はただテストなんだよ！ありがとうございます。
             </p>
           </a>
-        </div>
+        </div> */}
       </main>
   );
 }
