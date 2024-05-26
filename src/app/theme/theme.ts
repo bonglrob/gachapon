@@ -1,7 +1,8 @@
 'use client';
 
 import { Klee_One, Noto_Sans_JP } from "next/font/google";
-import { createTheme, styled } from "@mui/material/styles";
+import { createTheme, PaletteColorOptions } from "@mui/material/styles";
+import Button, { ButtonPropsColorOverrides } from "@mui/material/Button";
 
 import '@fontsource/klee-one/400.css';
 import '@fontsource/klee-one/600.css';
@@ -9,7 +10,6 @@ import '@fontsource/noto-sans-jp/300.css';
 import '@fontsource/noto-sans-jp/400.css';
 import '@fontsource/noto-sans-jp/500.css';
 import '@fontsource/noto-sans-jp/700.css';
-import { dark, light } from "@mui/material/styles/createPalette";
 
 
 const noto = Noto_Sans_JP({ subsets: ['latin'] });
@@ -31,9 +31,21 @@ declare module '@mui/material/styles' {
     laptop: true;
     desktop: true;
   }
+  interface Palette {
+    outline: PaletteColorOptions;
+  }
+  interface PaletteOptions {
+    outline: PaletteColorOptions;
+  }
 }
 
+declare module "@mui/material/Button" {
+  interface ButtonPropsColorOverrides {
+    outline: true;
+  }
+}
 
+const { palette } = createTheme();
 const theme = createTheme({
   palette: {
     primary: {
@@ -44,7 +56,12 @@ const theme = createTheme({
     },
     error: {
       main: '#ba1a1a'
-    }
+    },
+    outline: palette.augmentColor({
+      color: {
+        main: 'rgba(168, 168, 168, 0.25)'
+      }
+    })
   },
   typography: {
     h1: {fontFamily: klee.style.fontFamily},
