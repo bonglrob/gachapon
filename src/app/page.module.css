@@ -66,6 +66,10 @@
   height: auto;
 }
 
+.gachaponActive {
+  background-color: yellow;
+}
+
 .center {
   display: flex;
   justify-content: center;

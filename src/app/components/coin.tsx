@@ -28,7 +28,7 @@ export default function Coin(){
       <Image
         src={coinImage}
         alt="picture of 100 yen coin"
-        className={dragging ? `${styles.coin} ${styles.coinActive}` : styles.coin}
+        className={ dragging ? `${styles.coin} ${styles.coinActive}` : styles.coin }
         ref={ref}
       />
     </div>
