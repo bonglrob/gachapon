@@ -52,16 +52,13 @@
   height: auto;
 }
 
-/* .coin:hover {
-  height: 85px;
-  width: 85px;
-} */
+.coin:hover {
+  border-radius: 100%;
+  background-color: rgba(168, 168, 168, 0.25);
+}
 
-.coinMove {
-  width: 30vw;
-  position: absolute;
-  display: none;
-  transform: translateX(-50%) translateY(-50%);;
+.coinActive {
+  opacity: 0.4;
 }
 
 .gachapon {

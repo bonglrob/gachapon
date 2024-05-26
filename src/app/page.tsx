@@ -1,14 +1,10 @@
-'use client';
-
 import styles from "./page.module.css";
 import Coin from "./components/coin";
-import { useState } from "react";
 import Gachapon from "./components/gachapon";
 // import { Typography, Button } from "@mui/material";
 
 
 export default function Home() {
-  const [isClicked, setIsClicked] = useState(false);
 
   return (
       <main className={styles.main}>
@@ -21,9 +17,9 @@ export default function Home() {
           <Typography variant="h4" sx={{ background: 'red' }}>ありがとう！This is fun?笑</Typography>
         </div> */}
 
-        <Coin isClicked={isClicked} setIsClicked={setIsClicked}></Coin>
+        <Coin></Coin>
 
-        <Gachapon isClicked={isClicked} setIsClicked={setIsClicked}></Gachapon>
+        <Gachapon></Gachapon>
 
         {/* <div className={styles.grid}>
           <a
