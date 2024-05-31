@@ -6,6 +6,9 @@ import gachaponCoinInsert from '../../../public/img/coin-insert-1.png';
 import gachaponCoinInsert2 from '../../../public/img/coin-insert-2.png';
 import gachaponCoinInsert3 from '../../../public/img/coin-insert-3.png';
 import gachaponCoinInsert4 from '../../../public/img/coin-insert-4.png';
+import audio from '../../../public/assets/coin_insert_sfx.mp3';
+
+
 
 import { dropTargetForElements } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
 import { useRef, useEffect, useState } from "react";
@@ -13,7 +16,12 @@ import invariant from "tiny-invariant";
 import styles from '../page.module.css';
 
 export default function Gachapon({ cardView, setCardView, setCoinInserted }) {
+    // <audio controls>
+    //     <source src="./../../../public/assets/coin_insert_sfx.mp3" type="audio/mp3"/>
+    // </audio>
 
+    var audio = new Audio('./../../../public/assets/coin_insert_sfx.mp3');
+    audio.play();
     
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -29,11 +37,11 @@ export default function Gachapon({ cardView, setCardView, setCoinInserted }) {
     const handleClick = async () => {
         if (sourceImage === coinInsertAnimation[0]) {
             for (const pic of coinInsertAnimation) {
-                await sleep(750);
+                await sleep(75);
                 console.log(pic);
                 setImage(pic);
             }
-            sleep(8000).then(() => { setCardView(true) })
+            sleep(4000).then(() => { setCardView(true) })
         }
     };
 
