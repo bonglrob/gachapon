@@ -3,6 +3,8 @@ import "./globals.css";
 import { ThemeProvider } from "@mui/material";
 import theme from "./theme/theme";
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
+import sound from '../app/lever.wav'
+
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,6 +23,9 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             {children}
+            <audio src={sound} controls>
+              {/* src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3" */}
+            </audio>
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>

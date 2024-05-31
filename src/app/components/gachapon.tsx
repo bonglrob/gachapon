@@ -6,8 +6,7 @@ import gachaponCoinInsert from '../../../public/img/coin-insert-1.png';
 import gachaponCoinInsert2 from '../../../public/img/coin-insert-2.png';
 import gachaponCoinInsert3 from '../../../public/img/coin-insert-3.png';
 import gachaponCoinInsert4 from '../../../public/img/coin-insert-4.png';
-import audio from '../../../public/assets/coin_insert_sfx.mp3';
-
+import coinInsertSfx from '../../../public/assets/coin_insert_sfx.mp3';
 
 
 import { dropTargetForElements } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
@@ -16,12 +15,11 @@ import invariant from "tiny-invariant";
 import styles from '../page.module.css';
 
 export default function Gachapon({ cardView, setCardView, setCoinInserted }) {
+    // const myAudio = new Audio(coinInsertSfx);
+    // myAudio.play();
     // <audio controls>
-    //     <source src="./../../../public/assets/coin_insert_sfx.mp3" type="audio/mp3"/>
+    //     <source src={coinInsertSfx} type="audio/mp3"/>
     // </audio>
-
-    var audio = new Audio('./../../../public/assets/coin_insert_sfx.mp3');
-    audio.play();
     
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
