@@ -8,7 +8,7 @@ import {draggable} from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
 import invariant from 'tiny-invariant';
 
 
-export default function Coin(){
+export default function Coin({ coinInserted }){
   const ref = useRef(null);
   const [dragging, setDragging] = useState<boolean>(false);
 
@@ -24,7 +24,7 @@ export default function Coin(){
   }, []);
 
   return (
-    <div className={styles.alignRight}>
+    <div className={ coinInserted ? styles.hidden : styles.alignRight}>
       <Image
         src={coinImage}
         alt="picture of 100 yen coin"

@@ -1,10 +1,15 @@
+'use client';
+
 import styles from "./page.module.css";
 import Coin from "./components/coin";
 import Gachapon from "./components/gachapon";
-// import { Typography, Button } from "@mui/material";
+import GachaCard from "./components/gachacard";
+import { useState } from "react";
 
 
 export default function Home() {
+  const [cardView, setCardView] = useState(false);
+  const [coinInserted, setCoinInserted] = useState(false);
 
   return (
       <main className={styles.main}>
@@ -17,9 +22,11 @@ export default function Home() {
           <Typography variant="h4" sx={{ background: 'red' }}>ありがとう！This is fun?笑</Typography>
         </div> */}
 
-        <Coin></Coin>
+        <Coin coinInserted={ coinInserted }></Coin>
 
-        <Gachapon></Gachapon>
+        <Gachapon cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted }></Gachapon>
+
+        <GachaCard cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted }></GachaCard>
 
         {/* <div className={styles.grid}>
           <a
