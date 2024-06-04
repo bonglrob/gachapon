@@ -61,8 +61,7 @@ import { useRef, useEffect, useState } from "react";
 import invariant from "tiny-invariant";
 import styles from '../page.module.css';
 
-export default function Gachapon({ cardView, setCardView, setCoinInserted, sourceImage, setImage }) {
-    const remainingGachas = gachas;
+export default function Gachapon({ setHideGachaSet, cardView, setCardView, setCoinInserted, sourceImage, setImage, remainingGachas, collectedGachas, setCollectedGachas, setRemainingGachas }) {
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -114,15 +113,15 @@ export default function Gachapon({ cardView, setCardView, setCoinInserted, sourc
         yellow7
     ]);
       
-      const [blueAnimation] = useState([
-        blue1,
-        blue2,
-        blue3,
-        blue4,
-        blue5,
-        blue6,
-        blue7
-      ]);
+    const [blueAnimation] = useState([
+    blue1,
+    blue2,
+    blue3,
+    blue4,
+    blue5,
+    blue6,
+    blue7
+    ]);
 
 
     const handleClick = async () => {
@@ -130,7 +129,7 @@ export default function Gachapon({ cardView, setCardView, setCoinInserted, sourc
             return Math.floor(Math.random() * max);
           }
 
-        if (sourceImage === coinInsertAnimation[0] && remainingGachas.length > 1) {
+        if (sourceImage === coinInsertAnimation[0] && remainingGachas.length > 0) {
             for (const pic of coinInsertAnimation) {
                 await sleep(75);
                 setImage(pic);
@@ -139,16 +138,24 @@ export default function Gachapon({ cardView, setCardView, setCoinInserted, sourc
                 await sleep(75);
                 setImage(pic);
             }
-            let index = getRandomInt(remainingGachas.length);
-            const gacha = remainingGachas[index];
-            const name = Object.keys(gacha)[0];
-            const color = gacha[name]['color'];
 
-            // take chosen gacha object name as string 
-            // pass as arg to Gachacard & Gachaset (Homepage) 
-            // remove object from remainingGachas array
-            // filter gachaData array for string arg object name
-            // plug in {} to display data in gachacard and gachaset 
+            // Select random gacha and update arrays
+            let index = getRandomInt(remainingGachas.length);
+            const newCollectedGacha = remainingGachas[index];
+            const name = Object.keys(newCollectedGacha)[0];
+            const color = newCollectedGacha[name]['color'];
+
+            // Create a new array without mutating the original array
+            const newRemainingGachas = [
+                ...remainingGachas.slice(0, index),
+                ...remainingGachas.slice(index + 1)
+            ];
+            const newCollectedGachas = [...collectedGachas, newCollectedGacha];
+        
+            // Update state with new arrays
+            setCollectedGachas(newCollectedGachas);
+            setRemainingGachas(newRemainingGachas);
+
 
             switch (color) {
                 case 'green':
@@ -179,7 +186,6 @@ export default function Gachapon({ cardView, setCardView, setCoinInserted, sourc
                     break;
             }
             sleep(2500).then(() => { setCardView(true) })
-            return name;
         }
     };
 
@@ -195,6 +201,7 @@ export default function Gachapon({ cardView, setCardView, setCoinInserted, sourc
             onDragEnter: () => setIsDraggedOver(true),
             onDragLeave: () => setIsDraggedOver(false),
             onDrop: () => {
+                setHideGachaSet(true);
                 setIsDraggedOver(false);
                 setImage(gachaponCoinInsert);
                 setCoinInserted(true);

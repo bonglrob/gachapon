@@ -18,7 +18,7 @@ export default function Coin({ coinInserted }){
 
     return draggable({
       element: coin,
-      onDragStart: () => setDragging(true),
+      onDragStart: () => {setDragging(true);},
       onDrop: () => setDragging(false),
     });
   }, []);

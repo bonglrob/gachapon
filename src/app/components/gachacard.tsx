@@ -71,7 +71,7 @@ export default function GachaCard({ cardView, setCardView, setCoinInserted, setI
       </div>
       <CardContent>
         <Typography variant="h5" component="div">
-          ペコペコハム Hungy Hammy
+          {/* ペコペコハム Hungy Hammy */}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
           もぐもぐもぐもぐ

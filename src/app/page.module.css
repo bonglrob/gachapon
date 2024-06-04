@@ -57,6 +57,7 @@
 .coin:hover {
   border-radius: 100%;
   background-color: var(--outline);
+  cursor: grab;
 }
 
 .coinActive {
@@ -70,8 +71,9 @@
 .gachaSetPreview {
   border: solid;
   flex: 1 0 45%;
-  outline: 100px;
-  outline-color: '#009688';
+  /* outline: 100px; */
+  /* outline-color: '#009688'; */
+  border-radius: 1%;
   padding: 2%;
   margin: 1%;
 }

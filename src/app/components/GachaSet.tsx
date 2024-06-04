@@ -13,7 +13,19 @@ const Item = styled(Paper)(({ theme }) => ({
     justifyContent: "space-between",
   }));
 
-export default function GachaSet() {
+export default function GachaSet({ hideGachaSet, collectedGachas, cardView, setCardView }) {
+
+    function viewCard() {
+        setCardView(true);
+    }
+
+    const collectedGachaNames = Object.values(collectedGachas);
+
+    // checks for collectedGachas array and "unlocks" viewable gacha pages
+    function isObtained(gachaName: string) {
+        return collectedGachas.find(gacha => gacha.hasOwnProperty(gachaName));
+    }
+
     return (
         <Container sx={{
             display: 'flex',
@@ -22,16 +34,17 @@ export default function GachaSet() {
             width: '100%',
             height: '100%',
         }}>
-            <div className={ `${styles.gachaSetPreview} ${styles.characterColor}` }>
+            <div className={ hideGachaSet || cardView ? styles.hidden : `${styles.gachaSetPreview} ${styles.characterColor}` }>
                 <Typography>キャラセット Yellow</Typography>
                 <Stack spacing={{ mobile: 1, tablet: 2 }} direction={{mobile: "column", tablet: "row"}}>
                     <Item>
                         <Image 
-                            src='/img/hamu2.png'
+                            src={ isObtained('ペコペコハム Hungy Hammy') ? '/img/hamu2.png' : '/img/capsule_close4_yellow.png'}
                             width={100}
                             height={100}
+                            onClick={ isObtained('ペコペコハム Hungy Hammy') ? viewCard : null }
                         />
-                        <Typography>ペコペコハム Hungy Hammy</Typography>
+                        <Typography>{ isObtained('ペコペコハム Hungy Hammy') ? 'ペコペコハム Hungy Hammy' : '???' }</Typography>
                     </Item>
                     <Item>
                         <Image 
@@ -59,16 +72,17 @@ export default function GachaSet() {
                     </Item>
                 </Stack>
             </div>
-            <div className={ styles.gachaSetPreview }>
-                <Typography>キャラセット</Typography>
+            <div className={ hideGachaSet || cardView ? styles.hidden : `${styles.gachaSetPreview} ${styles.characterColor}` }>
+                <Typography>キャラセット Yellow</Typography>
                 <Stack spacing={{ mobile: 1, tablet: 2 }} direction={{mobile: "column", tablet: "row"}}>
                     <Item>
                         <Image 
-                            src={ham}
+                            src={ isObtained('ペコペコハム Hungy Hammy') ? '/img/hamu2.png' : '/img/capsule_close4_yellow.png'}
                             width={100}
                             height={100}
+                            onClick={ isObtained('ペコペコハム Hungy Hammy') ? viewCard : null }
                         />
-                        <Typography>Hamster</Typography>
+                        <Typography>{ isObtained('ペコペコハム Hungy Hammy') ? 'ペコペコハム Hungy Hammy' : '???' }</Typography>
                     </Item>
                     <Item>
                         <Image 
@@ -76,7 +90,7 @@ export default function GachaSet() {
                             width={100}
                             height={100}
                         />
-                        <Typography>2</Typography>
+                        <Typography>爆睡した馬　Napping Pony</Typography>
                     </Item>
                     <Item>
                         <Image 
@@ -84,7 +98,7 @@ export default function GachaSet() {
                             width={100}
                             height={100}
                         />
-                        <Typography>3</Typography>
+                        <Typography>Hey, Soul Sister'</Typography>
                     </Item>
                     <Item>
                         <Image 
@@ -96,16 +110,17 @@ export default function GachaSet() {
                     </Item>
                 </Stack>
             </div>
-            <div className={ styles.gachaSetPreview }>
-                <Typography>キャラセット</Typography>
+            <div className={ hideGachaSet || cardView ? styles.hidden : `${styles.gachaSetPreview} ${styles.characterColor}` }>
+                <Typography>キャラセット Yellow</Typography>
                 <Stack spacing={{ mobile: 1, tablet: 2 }} direction={{mobile: "column", tablet: "row"}}>
                     <Item>
                         <Image 
-                            src={ham}
+                            src={ isObtained('ペコペコハム Hungy Hammy') ? '/img/hamu2.png' : '/img/capsule_close4_yellow.png'}
                             width={100}
                             height={100}
+                            onClick={ isObtained('ペコペコハム Hungy Hammy') ? viewCard : null }
                         />
-                        <Typography>Hamster</Typography>
+                        <Typography>{ isObtained('ペコペコハム Hungy Hammy') ? 'ペコペコハム Hungy Hammy' : '???' }</Typography>
                     </Item>
                     <Item>
                         <Image 
@@ -113,7 +128,7 @@ export default function GachaSet() {
                             width={100}
                             height={100}
                         />
-                        <Typography>2</Typography>
+                        <Typography>爆睡した馬　Napping Pony</Typography>
                     </Item>
                     <Item>
                         <Image 
@@ -121,7 +136,7 @@ export default function GachaSet() {
                             width={100}
                             height={100}
                         />
-                        <Typography>3</Typography>
+                        <Typography>Hey, Soul Sister'</Typography>
                     </Item>
                     <Item>
                         <Image 
@@ -133,16 +148,17 @@ export default function GachaSet() {
                     </Item>
                 </Stack>
             </div>
-            <div className={ styles.gachaSetPreview }>
-                <Typography>キャラセット</Typography>
+            <div className={ hideGachaSet || cardView ? styles.hidden : `${styles.gachaSetPreview} ${styles.characterColor}` }>
+                <Typography>キャラセット Yellow</Typography>
                 <Stack spacing={{ mobile: 1, tablet: 2 }} direction={{mobile: "column", tablet: "row"}}>
                     <Item>
                         <Image 
-                            src={ham}
+                            src={ isObtained('ペコペコハム Hungy Hammy') ? '/img/hamu2.png' : '/img/capsule_close4_yellow.png'}
                             width={100}
                             height={100}
+                            onClick={ isObtained('ペコペコハム Hungy Hammy') ? viewCard : null }
                         />
-                        <Typography>Hamster</Typography>
+                        <Typography>{ isObtained('ペコペコハム Hungy Hammy') ? 'ペコペコハム Hungy Hammy' : '???' }</Typography>
                     </Item>
                     <Item>
                         <Image 
@@ -150,7 +166,7 @@ export default function GachaSet() {
                             width={100}
                             height={100}
                         />
-                        <Typography>2</Typography>
+                        <Typography>爆睡した馬　Napping Pony</Typography>
                     </Item>
                     <Item>
                         <Image 
@@ -158,7 +174,7 @@ export default function GachaSet() {
                             width={100}
                             height={100}
                         />
-                        <Typography>3</Typography>
+                        <Typography>Hey, Soul Sister'</Typography>
                     </Item>
                     <Item>
                         <Image 
