@@ -67,6 +67,32 @@
   display: none;
 }
 
+.gachaSetPreview {
+  border: solid;
+  flex: 1 0 45%;
+  outline: 100px;
+  outline-color: '#009688';
+  padding: 2%;
+  margin: 1%;
+}
+
+.characterColor {
+  border-color: orange;
+  background-color: orange;
+}
+
+.musicColor {
+  border-color: blue;
+}
+
+.memoryColor {
+  border-color: green;
+}
+
+.foodColor {
+  border-color: red;
+}
+
 .gachapon {
   width: 100%;
   height: auto;

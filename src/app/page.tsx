@@ -5,28 +5,27 @@ import Coin from "./components/coin";
 import Gachapon from "./components/gachapon";
 import GachaCard from "./components/gachacard";
 import { useState } from "react";
+import GachaSet from "./components/GachaSet";
+import gachaponPic from '../../public/img/gachapon.png';
+import gachas from '../app/data/data';
 
 
 export default function Home() {
   const [cardView, setCardView] = useState(false);
   const [coinInserted, setCoinInserted] = useState(false);
+  const [sourceImage, setImage] = useState(gachaponPic);
+  const remainingGachas = gachas;
 
   return (
       <main className={styles.main}>
-        {/* <div>
-          <Button onClick={console.log('button pressed')} variant="contained">
-            ただ実験テストなんだよ！ Gachapon
-          </Button>
-        </div>
-        <div>
-          <Typography variant="h4" sx={{ background: 'red' }}>ありがとう！This is fun?笑</Typography>
-        </div> */}
 
         <Coin coinInserted={ coinInserted }></Coin>
 
-        <Gachapon cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted }></Gachapon>
+        <Gachapon cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted } sourceImage={ sourceImage } setImage={ setImage } remainingGachas={ remainingGachas }></Gachapon>
 
-        <GachaCard cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted }></GachaCard>
+        <GachaCard cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted } setImage={ setImage }></GachaCard>
+        
+        <GachaSet></GachaSet>
 
         {/* <div className={styles.grid}>
           <a

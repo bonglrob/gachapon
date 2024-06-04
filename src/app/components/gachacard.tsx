@@ -9,9 +9,10 @@ import Hamster from '../../../public/img/hamu2.png'
 import { Button, Link } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 import styles from '../page.module.css';
+import gachaponPic from '../../../public/img/gachapon.png';
 
 
-export default function GachaCard({ cardView, setCardView, setCoinInserted }) {
+export default function GachaCard({ cardView, setCardView, setCoinInserted, setImage }) {
 
   return (
     <Card className={cardView ? '' : styles.hidden} sx={{ 
@@ -42,7 +43,7 @@ export default function GachaCard({ cardView, setCardView, setCoinInserted }) {
             // Return to Gachapon view
             setCardView(false);
             setCoinInserted(false);
-            console.log('test')
+            setImage(gachaponPic);
           }}
           sx={{
             position: 'absolute',
