@@ -33,9 +33,17 @@ declare module '@mui/material/styles' {
   }
   interface Palette {
     outline: PaletteColorOptions;
+    gachared: PaletteColorOptions;
+    gachablue: PaletteColorOptions;
+    gachagreen: PaletteColorOptions;
+    gachayellow: PaletteColorOptions;
   }
   interface PaletteOptions {
     outline: PaletteColorOptions;
+    gachared: PaletteColorOptions;
+    gachablue: PaletteColorOptions;
+    gachagreen: PaletteColorOptions;
+    gachayellow: PaletteColorOptions;
   }
 }
 
@@ -61,7 +69,27 @@ const theme = createTheme({
       color: {
         main: 'rgba(168, 168, 168, 0.25)'
       }
-    })
+    }),
+    gachared: palette.augmentColor({
+      color: {
+        main: '#E6392D'
+      }
+    }),
+    gachablue: palette.augmentColor({
+      color: {
+        main: '#0084CB'
+      }
+    }),
+    gachagreen: palette.augmentColor({
+      color: {
+        main: '#82BA1B'
+      }
+    }),
+    gachayellow: palette.augmentColor({
+      color: {
+        main: '#F9B300'
+      }
+    }),
   },
   typography: {
     h1: {fontFamily: klee.style.fontFamily},

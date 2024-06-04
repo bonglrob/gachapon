@@ -13,13 +13,14 @@ const Item = styled(Paper)(({ theme }) => ({
     justifyContent: "space-between",
   }));
 
-export default function GachaSet({ hideGachaSet, collectedGachas, cardView, setCardView }) {
+export default function GachaSet({ setGacha, hideGachaSet, collectedGachas, cardView, setCardView }) {
 
     function viewCard() {
+        // populate card()
         setCardView(true);
     }
 
-    const collectedGachaNames = Object.values(collectedGachas);
+    // const collectedGachaNames = Object.values(collectedGachas);
 
     // checks for collectedGachas array and "unlocks" viewable gacha pages
     function isObtained(gachaName: string) {
@@ -48,27 +49,29 @@ export default function GachaSet({ hideGachaSet, collectedGachas, cardView, setC
                     </Item>
                     <Item>
                         <Image 
-                            src={ham}
+                            src={ isObtained('爆睡した馬　Napping Pony') ? '/img/uma.jpg' : '/img/capsule_close4_yellow.png'}
                             width={100}
                             height={100}
+                            onClick={ isObtained('爆睡した馬　Napping Pony') ? viewCard : null }
                         />
-                        <Typography>爆睡した馬　Napping Pony</Typography>
+                        <Typography>{ isObtained('爆睡した馬　Napping Pony') ? '爆睡した馬　Napping Pony' : '???' }</Typography>
                     </Item>
                     <Item>
                         <Image 
-                            src={ham}
+                            src={ isObtained('コックカービィChef Kirby') ? '/img/cook.png' : '/img/capsule_close4_yellow.png'}
                             width={100}
                             height={100}
+                            onClick={ isObtained('コックカービィChef Kirby') ? viewCard : null }
                         />
-                        <Typography>Hey, Soul Sister'</Typography>
+                        <Typography>{ isObtained('コックカービィChef Kirby') ? 'コックカービィChef Kirby' : '???' }</Typography>
                     </Item>
                     <Item>
                         <Image 
-                            src={ham}
+                            src='/img/kirakira4.png'
                             width={100}
                             height={100}
                         />
-                        <Typography>Unlock</Typography>
+                        <Typography>Complete the set to Unlock!</Typography>
                     </Item>
                 </Stack>
             </div>
@@ -86,11 +89,12 @@ export default function GachaSet({ hideGachaSet, collectedGachas, cardView, setC
                     </Item>
                     <Item>
                         <Image 
-                            src={ham}
+                            src={ isObtained('爆睡した馬　Napping Pony') ? '/img/uma.jpg' : '/img/capsule_close4_yellow.png'}
                             width={100}
                             height={100}
+                            onClick={ isObtained('爆睡した馬　Napping Pony') ? viewCard : null }
                         />
-                        <Typography>爆睡した馬　Napping Pony</Typography>
+                        <Typography>{ isObtained('爆睡した馬　Napping Pony') ? '爆睡した馬　Napping Pony' : '???' }</Typography>
                     </Item>
                     <Item>
                         <Image 

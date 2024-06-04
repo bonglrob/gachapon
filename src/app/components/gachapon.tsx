@@ -61,7 +61,7 @@ import { useRef, useEffect, useState } from "react";
 import invariant from "tiny-invariant";
 import styles from '../page.module.css';
 
-export default function Gachapon({ setHideGachaSet, cardView, setCardView, setCoinInserted, sourceImage, setImage, remainingGachas, collectedGachas, setCollectedGachas, setRemainingGachas }) {
+export default function Gachapon({ setGacha, setHideGachaSet, cardView, setCardView, setCoinInserted, sourceImage, setImage, remainingGachas, collectedGachas, setCollectedGachas, setRemainingGachas }) {
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -144,6 +144,8 @@ export default function Gachapon({ setHideGachaSet, cardView, setCardView, setCo
             const newCollectedGacha = remainingGachas[index];
             const name = Object.keys(newCollectedGacha)[0];
             const color = newCollectedGacha[name]['color'];
+
+            setGacha(newCollectedGacha);
 
             // Create a new array without mutating the original array
             const newRemainingGachas = [

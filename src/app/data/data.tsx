@@ -3,7 +3,7 @@ const gachas: Array<{ [key: string]: Object }> = [
         'ペコペコハム Hungy Hammy': {
             'color' : 'yellow',
             'subtitle' : 'もぐもぐもぐもぐ',
-            'description' : 'this hamster is a ',
+            'description' : 'This hungry hamster is quite the little chomper! Born with a full set of teeth that never stops growing, he wants to have a bite of everything!',
             'image' : '/img/hamu2.png',
             'extra' : 'When he\'s not eating, he sure likes to groove, too!',
             'link' : 'https://www.youtube.com/watch?v=p3G5IXn0K7A'
@@ -14,7 +14,7 @@ const gachas: Array<{ [key: string]: Object }> = [
             'color' : 'yellow',
             'subtitle' : 'うま～！',
             'description' : 'This sleepy horse has found peace in the world. Horses can sleep standing up, but this one is 変なの and I like 変.',
-            'image' : '/img/hamu2.png',
+            'image' : '/img/uma.jpg',
             'extra' : 'In the future, let\'s go horseback riding together until the sunset, sounds romantic, right?',
             'link' : 'https://beachriding.jp/'
         }
@@ -31,7 +31,7 @@ const gachas: Array<{ [key: string]: Object }> = [
                 I can be myself now, finally\n
                 In fact, there's nothing I can't be\n
                 I want the world to see you be, with me`,
-            'image' : '/img/soul_sister.jpeg',
+            'image' : '/img/soul_sister_artwork.jpeg',
             'extra' : '',
             'link' : ''
         }
@@ -45,7 +45,7 @@ const gachas: Array<{ [key: string]: Object }> = [
                 その笑った 無邪気な顔も\n
                 変わらないね 変わらないで\n
                 いられるのは 今だけか`,
-            'image' : '',
+            'image' : '/img/imase_album_artwork.jpg',
             'extra' : '',
             'link' : ''
         }
@@ -65,8 +65,8 @@ const gachas: Array<{ [key: string]: Object }> = [
             'color' : 'yellow',
             'subtitle' : 'ぽよぽよ！ご飯タイム！',
             'description' : 'This pink goofball is known to whip up delicious meals with their trusty golden pot! Although it may seem cute, the truth is',
-            'image' : '/img/cook.jpg',
-            'extra' : 'Chef Kirby throws his enemies into the pot and boils them alive',
+            'image' : '/img/cook.png',
+            'extra' : 'Chef Kirby throws his enemies into the pot and boils them alive. かわいくなくて本当に怖いよ！',
             'link' : 'https://www.youtube.com/watch?v=hrgrjshpIF8&t=10s'
         }
     }, 

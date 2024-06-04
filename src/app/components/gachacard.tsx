@@ -5,14 +5,38 @@ import CardContent from '@mui/material/CardContent';
 import Chip from '@mui/material/Chip';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
-import Hamster from '../../../public/img/hamu2.png'
 import { Button, Link } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 import styles from '../page.module.css';
 import gachaponPic from '../../../public/img/gachapon.png';
 
 
-export default function GachaCard({ cardView, setCardView, setCoinInserted, setImage }) {
+export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardView, setCoinInserted, setImage }) {
+
+  const gachaName = Object.keys(gacha)[0];
+  console.log(gacha[gachaName])
+
+  // change label and color based on color property
+  let label = '';
+  let color = '';
+  switch (gacha[gachaName]['color']) {
+    case 'green': 
+      label = '思い出';
+      color = 'gachagreen';
+      break;
+    case 'blue':
+      label = '音楽';
+      color = 'gachablue';
+      break;
+    case 'red':
+      label = '食べ物';
+      color = 'gachared';
+      break;
+    default:
+      label = 'キャラ';
+      color = 'gachayellow';
+      break;
+  }
 
   return (
     <Card className={cardView ? '' : styles.hidden} sx={{ 
@@ -31,7 +55,7 @@ export default function GachaCard({ cardView, setCardView, setCoinInserted, setI
     }}
     >
       <div style={{ position: 'relative' }}>
-        <Chip label="キャラ" color='secondary' sx={{
+        <Chip label={label} color={color} sx={{
           position: 'absolute',
           left: '0.5rem',
           top: '0.5rem',
@@ -44,6 +68,7 @@ export default function GachaCard({ cardView, setCardView, setCoinInserted, setI
             setCardView(false);
             setCoinInserted(false);
             setImage(gachaponPic);
+            setHideGachaSet(false);
           }}
           sx={{
             position: 'absolute',
@@ -65,19 +90,19 @@ export default function GachaCard({ cardView, setCardView, setCoinInserted, setI
               desktop: '20em',
             },
           }}
-          image={Hamster.src}
-          title="hamster"
+          image={gacha[gachaName]['image']}
+          title={Object.keys(gacha)[0]}
         />
       </div>
       <CardContent>
         <Typography variant="h5" component="div">
-          {/* ペコペコハム Hungy Hammy */}
+          {Object.keys(gacha)[0]}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
-          もぐもぐもぐもぐ
+          {gacha[gachaName]['subtitle']}
         </Typography>
-        <Typography variant="body2">
-          This hungry hamster is quite the little chomper! Born with a full set of teeth that never stops growing, he wants to have a bite of everything! <Link href="https://www.youtube.com/watch?v=p3G5IXn0K7A">When he's not eating, he sure likes to groove, too!</Link>
+        <Typography variant="body2" sx={{ whiteSpace: 'pre-line' }}>
+          {gacha[gachaName]['description']} <Link href={gacha[gachaName]['link']}>{gacha[gachaName]['extra']}</Link>
         </Typography>
       </CardContent>
     </Card>
