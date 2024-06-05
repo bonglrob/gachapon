@@ -7,7 +7,7 @@ import gachaponCoinInsert from '../../../public/img/coin-insert-1.png';
 import gachaponCoinInsert2 from '../../../public/img/coin-insert-2.png';
 import gachaponCoinInsert3 from '../../../public/img/coin-insert-3.png';
 import gachaponCoinInsert4 from '../../../public/img/coin-insert-4.png';
-import coinInsertSfx from '../../../public/assets/coin_insert_sfx.mp3';
+import coinInsertSfx from '/assets/coin_insert_sfx.mp3';
 
 // gacha dispense animation
 import dispenseGacha1 from '../../../public/img/gachapon_open1.png'
@@ -61,7 +61,7 @@ import { useRef, useEffect, useState } from "react";
 import invariant from "tiny-invariant";
 import styles from '../page.module.css';
 
-export default function Gachapon({ setGacha, setHideGachaSet, cardView, setCardView, setCoinInserted, sourceImage, setImage, remainingGachas, collectedGachas, setCollectedGachas, setRemainingGachas }) {
+export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setShowYellow, setGacha, setHideGachaSet, cardView, setCardView, setCoinInserted, sourceImage, setImage, remainingGachas, collectedGachas, setCollectedGachas, setRemainingGachas }) {
 
     function sleep(ms) {
         return new Promise(resolve => setTimeout(resolve, ms));
@@ -123,6 +123,27 @@ export default function Gachapon({ setGacha, setHideGachaSet, cardView, setCardV
     blue7
     ]);
 
+    function playAudio(sound) {
+        const audio = new Audio(sound);
+        audio.play();
+      }
+
+    function revealSet(color) {
+        switch (color) {
+            case 'red':
+                setShowRed(true);
+                break;
+            case 'blue':
+                setShowBlue(true);
+                break;
+            case 'green':
+                setShowGreen(true);
+                break;
+            default:
+                setShowYellow(true);
+                break;
+        }
+    }
 
     const handleClick = async () => {
         function getRandomInt(max) {
@@ -130,6 +151,7 @@ export default function Gachapon({ setGacha, setHideGachaSet, cardView, setCardV
           }
 
         if (sourceImage === coinInsertAnimation[0] && remainingGachas.length > 0) {
+            playAudio('/assets/lever.wav');
             for (const pic of coinInsertAnimation) {
                 await sleep(75);
                 setImage(pic);
@@ -145,8 +167,7 @@ export default function Gachapon({ setGacha, setHideGachaSet, cardView, setCardV
             const name = Object.keys(newCollectedGacha)[0];
             const color = newCollectedGacha[name]['color'];
 
-            console.log('oG ' + newCollectedGacha)
-
+            revealSet(color);
             setGacha(newCollectedGacha);
 
             // Create a new array without mutating the original array
@@ -189,7 +210,7 @@ export default function Gachapon({ setGacha, setHideGachaSet, cardView, setCardV
                 default:
                     break;
             }
-            sleep(2500).then(() => { setCardView(true) })
+            sleep(1500).then(() => { setCardView(true); playAudio('/assets/gachaRevealSfx.wav') })
         }
     };
 
@@ -209,6 +230,7 @@ export default function Gachapon({ setGacha, setHideGachaSet, cardView, setCardV
                 setIsDraggedOver(false);
                 setImage(gachaponCoinInsert);
                 setCoinInserted(true);
+                playAudio('/assets/coin_insert_sfx.mp3');
             }
         });
     }, []);

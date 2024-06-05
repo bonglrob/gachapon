@@ -4,7 +4,7 @@ const gachas: Array<{ [key: string]: Object }> = [
             'color' : 'yellow',
             'subtitle' : 'もぐもぐもぐもぐ',
             'description' : 'This hungry hamster is quite the little chomper! Born with a full set of teeth that never stops growing, he wants to have a bite of everything!',
-            'image' : '/img/hamu2.png',
+            'image' : '/img/hamu3.png',
             'extra' : 'When he\'s not eating, he sure likes to groove, too!',
             'link' : 'https://www.youtube.com/watch?v=p3G5IXn0K7A'
         }
@@ -51,6 +51,19 @@ const gachas: Array<{ [key: string]: Object }> = [
         }
     }, 
     {
+        'Seven': {
+            'color' : 'blue',
+            'subtitle' : 'by Jung Kook, Latto',
+            'description' : 
+                `"Every hour, every minute, every second\n
+                You know night after night\n
+                I'll be lovin' you right"`,
+            'image' : '/img/seven.jpeg',
+            'extra' : '',
+            'link' : ''
+        }
+    }, 
+    {
         'Sweaty Sheepies': {
             'color' : 'green',
             'subtitle' : 'メーメー',
@@ -76,6 +89,16 @@ const gachas: Array<{ [key: string]: Object }> = [
             'subtitle' : '甘い！もちもち！',
             'description' : 'An angel from the skies above is weeping, but her tears are surprisingly sweet! Let this be a reminder to enjoy the sweet things in life when feeling sad. This delightful Japanese dessert is simply scrumptious!',
             'image' : '/img/mochi.jpeg',
+            'extra' : '一緒にわらび餅を作ろうよ！', 
+            'link' : 'https://www.justonecookbook.com/warabi-mochi/'
+        }
+    }, 
+    {
+        'Bingo Bongo': {
+            'color' : 'green',
+            'subtitle' : '長くて待たされたんだけど、美味しかった！',
+            'description' : 'By staying at the Airbnb near Ootsuka station, we were so lucky to eat delicious onigiri! The wait was not so bad because we ended up sitting front row seats to watch the head chef make our order live! Afterwards, we watched the ちんちん電車 come through. Picking between Kichijoji and Ootsuka station, Ootsuka was my favorite station to explore with you. There was so much to see, like the ちんちん電車 rolling through the night and lots of girls in the middle of the night waiting for おじさん. In the morning, we could see actual おじさん doing morning routine in the park.',
+            'image' : '/img/bongo.jpg',
             'extra' : '一緒にわらび餅を作ろうよ！', 
             'link' : 'https://www.justonecookbook.com/warabi-mochi/'
         }

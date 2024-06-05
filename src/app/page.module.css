@@ -79,20 +79,23 @@
 }
 
 .characterColor {
-  border-color: orange;
-  background-color: orange;
+  border-color: #F9B300;
+  background-color: #fad44f;
 }
 
 .musicColor {
-  border-color: blue;
+  border-color: #0084CB;
+  background-color: #28b2f0;
 }
 
 .memoryColor {
-  border-color: green;
+  border-color: #82BA1B;
+  background-color: #C2DC95;
 }
 
 .foodColor {
-  border-color: red;
+  border-color: #E6392D;
+  background-color: #E7736E;
 }
 
 .gachapon {

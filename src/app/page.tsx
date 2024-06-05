@@ -16,19 +16,25 @@ export default function Home() {
   const [sourceImage, setImage] = useState(gachaponPic);
   const [collectedGachas, setCollectedGachas] = useState([]);
   const [remainingGachas, setRemainingGachas] = useState(gachas);
-  const [hideGachaSet, setHideGachaSet] = useState(false);
+  const [hideGachaSet, setHideGachaSet] = useState(true);
   const [gacha, setGacha] = useState(gachas[0]);
+
+  const [showBlue, setShowBlue] = useState(false);
+  const [showYellow, setShowYellow] = useState(false);
+  const [showGreen, setShowGreen] = useState(false);
+  const [showRed, setShowRed] = useState(false);
+
 
   return (
       <main className={styles.main}>
 
-        <Coin coinInserted={ coinInserted }></Coin>
+        <Coin remainingGachas={ remainingGachas } coinInserted={ coinInserted }></Coin>
 
-        <Gachapon setGacha= { setGacha } setHideGachaSet={ setHideGachaSet} cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted } sourceImage={ sourceImage } setImage={ setImage } remainingGachas={ remainingGachas } collectedGachas={ collectedGachas } setRemainingGachas={ setRemainingGachas} setCollectedGachas={ setCollectedGachas }></Gachapon>
+        <Gachapon setShowBlue={ setShowBlue } setShowGreen={ setShowGreen } setShowRed={ setShowRed } setShowYellow={ setShowYellow } setGacha= { setGacha } setHideGachaSet={ setHideGachaSet} cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted } sourceImage={ sourceImage } setImage={ setImage } remainingGachas={ remainingGachas } collectedGachas={ collectedGachas } setRemainingGachas={ setRemainingGachas} setCollectedGachas={ setCollectedGachas }></Gachapon>
 
         <GachaCard setHideGachaSet={ setHideGachaSet } gacha={ gacha } cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted } setImage={ setImage }></GachaCard>
         
-        <GachaSet setGacha= { setGacha } hideGachaSet={ hideGachaSet } cardView={ cardView } setCardView={ setCardView } collectedGachas={ collectedGachas }></GachaSet>
+        <GachaSet showBlue={ showBlue } showGreen={ showGreen } showRed={ showRed } showYellow={ showYellow } setGacha={ setGacha } hideGachaSet={ hideGachaSet } cardView={ cardView } setCardView={ setCardView } collectedGachas={ collectedGachas }></GachaSet>
 
       </main>
   );

@@ -47,9 +47,6 @@ export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardVie
         }}/> 
         <Button 
           onClick={() => {
-            // Update set list
-            // Add hamster to gachapon view
-            // Return to Gachapon view
             setCardView(false);
             setCoinInserted(false);
             setImage(gachaponPic);
