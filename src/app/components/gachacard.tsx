@@ -14,7 +14,6 @@ import gachaponPic from '../../../public/img/gachapon.png';
 export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardView, setCoinInserted, setImage }) {
 
   const gachaName = Object.keys(gacha)[0];
-  console.log(gacha[gachaName])
 
   // change label and color based on color property
   let label = '';
@@ -39,23 +38,9 @@ export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardVie
   }
 
   return (
-    <Card className={cardView ? '' : styles.hidden} sx={{ 
-      marginLeft: {
-        mobile: 1/5,
-        tablet: 1/4,
-        laptop: 1/3,
-        desktop: 1/2,
-      },
-      marginRight: {
-        mobile: 1/5,
-        tablet: 1/4,
-        laptop: 1/3,
-        desktop: 1/2,
-      },
-    }}
-    >
+    <Card className={cardView ? '' : styles.hidden} sx={ { width: { mobile: '60vw', tablet: '35vw', laptop: '45vw'}} }>
       <div style={{ position: 'relative' }}>
-        <Chip label={label} color={color} sx={{
+        <Chip size='small' label={label} color={color} sx={{
           position: 'absolute',
           left: '0.5rem',
           top: '0.5rem',
@@ -75,7 +60,7 @@ export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardVie
             right: '0.25rem',
             top: '0.25rem',
           }}>
-          <CancelIcon color='secondary'/>
+          <CancelIcon color={color} sx={ { background: 'rgba(168, 168, 168, 0.25)', borderRadius: '100%' }}/>
         </Button>
         <CardMedia
           sx={{
@@ -84,10 +69,10 @@ export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardVie
             // maxHeight: { mobile: 233, tablet: 167 },
             // maxWidth: { mobile: 350, tablet: 250 },
             height: {
-              mobile: '10em',
-              tablet: '15em',
-              laptop: '18em',
-              desktop: '20em',
+              mobile: '30vh',
+              tablet: '40vh',
+              laptop: '55vh',
+              desktop: '65vh',
             },
           }}
           image={gacha[gachaName]['image']}

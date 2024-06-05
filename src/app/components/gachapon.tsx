@@ -145,6 +145,8 @@ export default function Gachapon({ setGacha, setHideGachaSet, cardView, setCardV
             const name = Object.keys(newCollectedGacha)[0];
             const color = newCollectedGacha[name]['color'];
 
+            console.log('oG ' + newCollectedGacha)
+
             setGacha(newCollectedGacha);
 
             // Create a new array without mutating the original array
