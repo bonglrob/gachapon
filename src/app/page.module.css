@@ -45,8 +45,8 @@
   width: 100px;
   height: 100px;
   position: absolute;
-  right: 0.5rem;
-  top: 0.5rem;
+  right: 3rem;
+  top: 3rem;
 }
 
 .coin {
@@ -66,6 +66,19 @@
 
 .hidden {
   display: none;
+}
+
+.gachaCard {
+  animation: scaleUp 0.80s ease-in-out forwards;
+}
+
+@keyframes scaleUp {
+  0% {
+      transform: scale(0.25);
+  }
+  100% {
+      transform: scale(1.0);
+  }
 }
 
 .gachaSetPreview {
@@ -113,6 +126,7 @@
   align-items: center;
   position: relative;
   padding: 4rem 0;
+  cursor: pointer;
 }
 
 .center::before {

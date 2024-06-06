@@ -7,7 +7,6 @@ import gachaponCoinInsert from '../../../public/img/coin-insert-1.png';
 import gachaponCoinInsert2 from '../../../public/img/coin-insert-2.png';
 import gachaponCoinInsert3 from '../../../public/img/coin-insert-3.png';
 import gachaponCoinInsert4 from '../../../public/img/coin-insert-4.png';
-import coinInsertSfx from '/assets/coin_insert_sfx.mp3';
 
 // gacha dispense animation
 import dispenseGacha1 from '../../../public/img/gachapon_open1.png'
@@ -180,7 +179,7 @@ export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setSho
             // Update state with new arrays
             setCollectedGachas(newCollectedGachas);
             setRemainingGachas(newRemainingGachas);
-
+            playAudio('/assets/capsule_drop_sfx.wav')
 
             switch (color) {
                 case 'green':
@@ -226,17 +225,17 @@ export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setSho
             onDragEnter: () => setIsDraggedOver(true),
             onDragLeave: () => setIsDraggedOver(false),
             onDrop: () => {
+                playAudio('/assets/coin_insert_sfx.mp3');
                 setHideGachaSet(true);
                 setIsDraggedOver(false);
                 setImage(gachaponCoinInsert);
                 setCoinInserted(true);
-                playAudio('/assets/coin_insert_sfx.mp3');
             }
         });
     }, []);
 
     return (
-        <div className={cardView ? styles.hidden : styles.center}>
+        <div className={cardView ? styles.hidden : styles.center} style={ sourceImage === coinInsertAnimation[0] ? { cursor: 'pointer' } : { cursor: 'default' }}>
             <Image
                 src={sourceImage}
                 alt="picture of gachapon machine"

@@ -24,7 +24,7 @@ export default function Coin({ coinInserted, remainingGachas }){
   }, []);
 
   return (
-    <div className={ remainingGachas > 0 || coinInserted ? styles.hidden : styles.alignRight}>
+    <div className={ remainingGachas == 0 || coinInserted ? styles.hidden : styles.alignRight}>
       <Image
         src={coinImage}
         alt="picture of 100 yen coin"

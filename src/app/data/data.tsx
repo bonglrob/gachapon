@@ -103,6 +103,36 @@ const gachas: Array<{ [key: string]: Object }> = [
             'link' : 'https://www.justonecookbook.com/warabi-mochi/'
         }
     }, 
+    {
+        'test': {
+            'color' : 'green',
+            'subtitle' : '長くて待たされたんだけど、美味しかった！',
+            'description' : 'ipsom texgt ooooh yeah awesome',
+            'image' : '/img/bongo.jpg',
+            'extra' : '一緒にわらび餅を作ろうよ！', 
+            'link' : 'https://www.justonecookbook.com/warabi-mochi/'
+        }
+    }, 
+    {
+        'udon': {
+            'color' : 'red',
+            'subtitle' : '長くて待たされたんだけど、美味しかった！',
+            'description' : 'ipsom texgt ooooh yeah awesome',
+            'image' : '/img/bongo.jpg',
+            'extra' : '一緒にわらび餅を作ろうよ！', 
+            'link' : 'https://www.justonecookbook.com/warabi-mochi/'
+        }
+    }, 
+    {
+        'natto': {
+            'color' : 'red',
+            'subtitle' : '長くて待たされたんだけど、美味しかった！',
+            'description' : 'ipsom texgt ooooh yeah awesome',
+            'image' : '/img/bongo.jpg',
+            'extra' : '一緒にわらび餅を作ろうよ！', 
+            'link' : 'https://www.justonecookbook.com/warabi-mochi/'
+        }
+    }, 
     // {
     //     'hamster ペコペコハム': {
     //         'color' :

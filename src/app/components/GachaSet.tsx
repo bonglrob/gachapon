@@ -95,7 +95,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                             height={100}
                         />
                         <Button onClick={ isObtained('コックカービィChef Kirby') && isObtained('爆睡した馬　Napping Pony') && isObtained('ペコペコハム Hungy Hammy') ? revealChar : null }> 
-                            { unlockedRewardChar ? 'You\'ve Unlocked UGLY HAMSTER 3 LINE Sticker Pack! Go to LINE to claim your reward' : 'Complete the set to Unlock!'}
+                            { unlockedRewardChar ? 'You\'ve Unlocked UGLY HAMSTER 3 LINE Sticker Pack! Go to LINE to claim your reward' : 'Collect キャラ・セット to Unlock!'}
                         </Button>
                     </Item>
                 </Stack>
@@ -163,14 +163,14 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                         />
                         <Typography>{ isObtained('Bingo Bongo') ? 'Bingo Bongo' : '???' }</Typography>
                     </Item>
-                    <Item onClick={ isObtained('コックカービィChef Kirby') ? viewCard : null } sx={ isObtained('ペコペコハム Hungy Hammy') ? { cursor: 'pointer' } : '' }>
+                    <Item onClick={ isObtained('test') ? viewCard : null } sx={ isObtained('test') ? { cursor: 'pointer' } : '' }>
                         <Image 
-                            src={ isObtained('コックカービィChef Kirby') ? '/img/cook.png' : '/img/capsule_close4_green.png'}
+                            src={ isObtained('test') ? '/img/cook.png' : '/img/capsule_close4_green.png'}
                             width={100}
                             height={100}
-                            onClick={ isObtained('コックカービィChef Kirby') ? viewCard : null }
+                            onClick={ isObtained('test') ? viewCard : null }
                         />
-                        <Typography>{ isObtained('コックカービィChef Kirby') ? 'コックカービィChef Kirby' : '???' }</Typography>
+                        <Typography>{ isObtained('test') ? 'test' : '???' }</Typography>
                     </Item>
                     <Item sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Image 
@@ -178,7 +178,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                             width={100}
                             height={100}
                         />
-                        <Button onClick={ isObtained('Sweaty Sheepies') && isObtained('Bingo Bongo') && isObtained('ペコペコハム Hungy Hammy') ? revealMemory : null }> 
+                        <Button onClick={ isObtained('Sweaty Sheepies') && isObtained('Bingo Bongo') && isObtained('test') ? revealMemory : null }> 
                             { unlockedRewardMemory ? 'You\'ve Unlocked Anniversary Letter' : 'Collect All Gachas To Unlock!'}
                         </Button>
                     </Item>
@@ -196,23 +196,23 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                         />
                         <Typography>{ isObtained('天使の涙わらび餅 Angel\'s Tear Mochi') ? '天使の涙わらび餅 Angel\'s Tear Mochi' : '???' }</Typography>
                     </Item>
-                    <Item onClick={ isObtained('爆睡した馬　Napping Pony') ? viewCard : null } sx={ isObtained('ペコペコハム Hungy Hammy') ? { cursor: 'pointer' } : '' }>
+                    <Item onClick={ isObtained('natto') ? viewCard : null } sx={ isObtained('natto') ? { cursor: 'pointer' } : '' }>
                         <Image 
-                            src={ isObtained('爆睡した馬　Napping Pony') ? '/img/uma.jpg' : '/img/capsule_close4_red.png'}
+                            src={ isObtained('natto') ? '/img/uma.jpg' : '/img/capsule_close4_red.png'}
                             width={100}
                             height={100}
-                            onClick={ isObtained('爆睡した馬　Napping Pony') ? viewCard : null }
+                            onClick={ isObtained('natto') ? viewCard : null }
                         />
-                        <Typography>{ isObtained('爆睡した馬　Napping Pony') ? '爆睡した馬　Napping Pony' : '???' }</Typography>
+                        <Typography>{ isObtained('natto') ? 'natto' : '???' }</Typography>
                     </Item>
-                    <Item onClick={ isObtained('コックカービィChef Kirby') ? viewCard : null } sx={ isObtained('ペコペコハム Hungy Hammy') ? { cursor: 'pointer' } : '' }>
+                    <Item onClick={ isObtained('udon') ? viewCard : null } sx={ isObtained('udon') ? { cursor: 'pointer' } : '' }>
                         <Image 
-                            src={ isObtained('コックカービィChef Kirby') ? '/img/cook.png' : '/img/capsule_close4_red.png'}
+                            src={ isObtained('udon') ? '/img/cook.png' : '/img/capsule_close4_red.png'}
                             width={100}
                             height={100}
-                            onClick={ isObtained('コックカービィChef Kirby') ? viewCard : null }
+                            onClick={ isObtained('udon') ? viewCard : null }
                         />
-                        <Typography>{ isObtained('コックカービィChef Kirby') ? 'コックカービィChef Kirby' : '???' }</Typography>
+                        <Typography>{ isObtained('udon') ? 'udon' : '???' }</Typography>
                     </Item>
                     <Item sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Image 
@@ -220,7 +220,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                             width={100}
                             height={100}
                         />
-                        <Button onClick={ isObtained('コックカービィChef Kirby') && isObtained('爆睡した馬　Napping Pony') && isObtained('天使の涙わらび餅 Angel\'s Tear Mochi') ? revealFood : null }> 
+                        <Button onClick={ isObtained('天使の涙わらび餅 Angel\'s Tear Mochi') && isObtained('natto') && isObtained('natto') ? revealFood : null }> 
                             { unlockedRewardFood ? 'You\'ve Unlocked UGLY HAMSTER 3 LINE Sticker Pack! Go to LINE to claim your reward' : 'Complete the set to Unlock!'}
                         </Button>
                     </Item>

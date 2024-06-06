@@ -38,7 +38,7 @@ export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardVie
   }
 
   return (
-    <Card className={cardView ? '' : styles.hidden} sx={ { width: { mobile: '60vw', tablet: '35vw', laptop: '45vw'}} }>
+    <Card className={cardView ? styles.gachaCard : styles.hidden} sx={ { width: { mobile: '60vw', tablet: '35vw', laptop: '45vw'}} }>
       <div style={{ position: 'relative' }}>
         <Chip size='small' label={label} color={color} sx={{
           position: 'absolute',
@@ -84,7 +84,7 @@ export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardVie
           {gacha[gachaName]['subtitle']}
         </Typography>
         <Typography variant="body2" sx={{ whiteSpace: 'pre-line' }}>
-          {gacha[gachaName]['description']} <Link href={gacha[gachaName]['link']}>{gacha[gachaName]['extra']}</Link>
+          {gacha[gachaName]['description']} <Link target='_blank' href={gacha[gachaName]['link']}>{gacha[gachaName]['extra']}</Link>
         </Typography>
       </CardContent>
     </Card>
