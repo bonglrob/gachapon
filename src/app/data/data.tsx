@@ -87,7 +87,7 @@ const gachas: Array<{ [key: string]: Object }> = [
         '天使の涙わらび餅 Angel\'s Tear Mochi': {
             'color' : 'red',
             'subtitle' : '甘い！もちもち！',
-            'description' : 'An angel from the skies above is weeping, but her tears are surprisingly sweet! Let this be a reminder to enjoy the sweet things in life when feeling sad. This delightful Japanese dessert is simply scrumptious!',
+            'description' : 'An angel from the skies above is weeping, but her tears are surprisingly sweet! Let this be a reminder to enjoy the sweet things in life when feeling sad. This delightful Japanese dessert is simply scrumptious! I never tried warabi mochi until I\'ve met you and I\'m happy to have so! I know that it\'s your favorite dessert and while visiting you, I just had to take you to this secret back-alley shop in Omotesandō!',
             'image' : '/img/mochi.jpeg',
             'extra' : '一緒にわらび餅を作ろうよ！', 
             'link' : 'https://www.justonecookbook.com/warabi-mochi/'
@@ -97,40 +97,40 @@ const gachas: Array<{ [key: string]: Object }> = [
         'Bingo Bongo': {
             'color' : 'green',
             'subtitle' : '長くて待たされたんだけど、美味しかった！',
-            'description' : 'By staying at the Airbnb near Ootsuka station, we were so lucky to eat delicious onigiri! The wait was not so bad because we ended up sitting front row seats to watch the head chef make our order live! Afterwards, we watched the ちんちん電車 come through. Picking between Kichijoji and Ootsuka station, Ootsuka was my favorite station to explore with you. There was so much to see, like the ちんちん電車 rolling through the night and lots of girls in the middle of the night waiting for おじさん. In the morning, we could see actual おじさん doing morning routine in the park.',
+            'description' : 'By staying at the Airbnb near Ootsuka station, we were so lucky to eat delicious onigiri! The wait was not so bad because we ended up sitting front row seats to watch the head chef make our order live! Looking back, Ootsuka station was one of my favorite stations to explore with you. We could go to the bookstore to look for your BL stuff, but found a stern Elon Musk with no upper lip. Walking back home, we can watch the ちんちん電車 come through. At the same time, there were just random girls waiting for おじさん for a night of fun. Compared to the morning, we could see actual おじさん doing stretches and exercise at the park. It was nice to just spend time together.',
             'image' : '/img/bongo.jpg',
             'extra' : '一緒にわらび餅を作ろうよ！', 
             'link' : 'https://www.justonecookbook.com/warabi-mochi/'
         }
     }, 
     {
-        'test': {
+        'Next Chapter': {
             'color' : 'green',
-            'subtitle' : '長くて待たされたんだけど、美味しかった！',
-            'description' : 'ipsom texgt ooooh yeah awesome',
-            'image' : '/img/bongo.jpg',
-            'extra' : '一緒にわらび餅を作ろうよ！', 
-            'link' : 'https://www.justonecookbook.com/warabi-mochi/'
+            'subtitle' : 'We\'ve come a long way',
+            'description' : 'This was the last photo we took together before your return to Japan. The autumn outfit catalog and winter catalog inside the museum. Memories are not always fun, happy times. I felt a flood of emotions: happiness, sadness, anxiety and excitement. We were spending almost every waking moment together because that little time we had meant everything. The Robert back then was thinking, if we\'re still together later, then we truly love each other and want to make it work. The me right now is thinking I love this girl more than ever and more 変 than ever.',
+            'image' : '/img/museum.jpg',
+            'extra' : '', 
+            'link' : ''
         }
     }, 
     {
-        'udon': {
+        'スア・ガイ　Lao Chicken Noodle Soup': {
             'color' : 'red',
-            'subtitle' : '長くて待たされたんだけど、美味しかった！',
-            'description' : 'ipsom texgt ooooh yeah awesome',
-            'image' : '/img/bongo.jpg',
-            'extra' : '一緒にわらび餅を作ろうよ！', 
-            'link' : 'https://www.justonecookbook.com/warabi-mochi/'
+            'subtitle' : 'Sep Lai Lai!',
+            'description' : 'It was a fun date night to cook this together, and we came out with 2 unique, yet yummy dishes! I appreciate that you went out of your way to source super, super rare ingredients. That\'s one thing I like about you, is putting in extra effort! Recently, I\'ve been adapting this soup to an easy to make at home version. You just dunk chicken thighs in a pot with Thai-Lao Ingredients for an hour, and you\'re done! I still think that food brings us together, and I cherish the times we are able to cook together. I want to spoon-feed you like the very first time I popped a blueberry into your mouth while all our friends were looking away in that tiny kitchen on your 22nd birthday. Once I have my own recipe down, I want to share it with you, and we can try cooking it together!',
+            'image' : '/img/sua_gai.jpg',
+            'extra' : '', 
+            'link' : ''
         }
     }, 
     {
-        'natto': {
+        'お好み焼き　Okonomiyaki': {
             'color' : 'red',
-            'subtitle' : '長くて待たされたんだけど、美味しかった！',
-            'description' : 'ipsom texgt ooooh yeah awesome',
-            'image' : '/img/bongo.jpg',
-            'extra' : '一緒にわらび餅を作ろうよ！', 
-            'link' : 'https://www.justonecookbook.com/warabi-mochi/'
+            'subtitle' : '美味しいパンケーキ！',
+            'description' : 'Did you know? Okonomiyaki was the first Japanese food I cooked, and it was in Osaka. What makes it more special to me is that it later became the first dish that we cooked together. For a while, I considered okonomiyaki as my favorite Japanese food. Later on, you would introduce me to monja, which looks like a baby vomited into the hot plate, but it\'s super umai! Slowly, I\'ve come to like monja more than okonomiyaki because it\'s fun to eat together, and you can do so many delicious flavors like mentaiko!',
+            'image' : '/img/okonomiyaki.jpg',
+            'extra' : '', 
+            'link' : ''
         }
     }, 
     // {

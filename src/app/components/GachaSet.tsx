@@ -107,7 +107,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                                 playAudio('/assets/locked_sfx.mp3'); 
                             }}
                         }> 
-                            { unlockedRewardChar ? 'GOT HAMSTER LINE STICKER!' : 'Collect キャラ・セット to Unlock!'}
+                            { unlockedRewardChar ? 'GOT HAMSTER LINE STICKER!' : 'Complete this set to Unlock!'}
                         </Button>
                     </Item>
                 </Stack>
@@ -161,7 +161,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                 </Stack>
             </div>
             <div className={ (!showGreen) || hideGachaSet || cardView ? styles.hidden : `${styles.gachaSetPreview} ${styles.memoryColor}` }>
-                <Typography variant='h5' sx={ { paddingBottom: '1rem' }}>思い出</Typography>
+                <Typography variant='h5' sx={ { paddingBottom: '1rem' }}>思い出セット</Typography>
                 <Stack spacing={{ mobile: 1, tablet: 2 }} direction={{mobile: "column", tablet: "row"}}>
                     <Item onClick={ isObtained('Sweaty Sheepies') ? viewCard : null } sx={ isObtained('Sweaty Sheepies') ? { cursor: 'pointer' } : '' }>
                         <Image 
@@ -181,14 +181,14 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                         />
                         <Typography>{ isObtained('Bingo Bongo') ? 'Bingo Bongo' : '???' }</Typography>
                     </Item>
-                    <Item onClick={ isObtained('test') ? viewCard : null } sx={ isObtained('test') ? { cursor: 'pointer' } : '' }>
+                    <Item onClick={ isObtained('Next Chapter') ? viewCard : null } sx={ isObtained('Next Chapter') ? { cursor: 'pointer' } : '' }>
                         <Image 
-                            src={ isObtained('test') ? '/img/cook.png' : '/img/capsule_close4_green.png'}
+                            src={ isObtained('Next Chapter') ? '/img/museum.jpg' : '/img/capsule_close4_green.png'}
                             width={100}
                             height={100}
-                            onClick={ isObtained('test') ? viewCard : null }
+                            onClick={ isObtained('Next Chapter') ? viewCard : null }
                         />
-                        <Typography>{ isObtained('test') ? 'test' : '???' }</Typography>
+                        <Typography>{ isObtained('Next Chapter') ? 'Next Chapter' : '???' }</Typography>
                     </Item>
                     <Item sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         { unlockedRewardMemory ? <Link href='#'></Link> : ''}
@@ -198,7 +198,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                             height={100}
                         />
                         <Button onClick={ () => { 
-                            if (isObtained('Sweaty Sheepies') && isObtained('Bingo Bongo') && isObtained('test')) {
+                            if (isObtained('Sweaty Sheepies') && isObtained('Bingo Bongo') && isObtained('Next Chapter')) {
                                 revealMemory();
                             } else {
                                 playAudio('/assets/locked_sfx.mp3'); 
@@ -221,23 +221,23 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                         />
                         <Typography>{ isObtained('天使の涙わらび餅 Angel\'s Tear Mochi') ? '天使の涙わらび餅 Angel\'s Tear Mochi' : '???' }</Typography>
                     </Item>
-                    <Item onClick={ isObtained('natto') ? viewCard : null } sx={ isObtained('natto') ? { cursor: 'pointer' } : '' }>
+                    <Item onClick={ isObtained('お好み焼き　Okonomiyaki') ? viewCard : null } sx={ isObtained('お好み焼き　Okonomiyaki') ? { cursor: 'pointer' } : '' }>
                         <Image 
-                            src={ isObtained('natto') ? '/img/uma.jpg' : '/img/capsule_close4_red.png'}
+                            src={ isObtained('お好み焼き　Okonomiyaki') ? '/img/okonomiyaki.jpg' : '/img/capsule_close4_red.png'}
                             width={100}
                             height={100}
-                            onClick={ isObtained('natto') ? viewCard : null }
+                            onClick={ isObtained('お好み焼き　Okonomiyaki') ? viewCard : null }
                         />
-                        <Typography>{ isObtained('natto') ? 'natto' : '???' }</Typography>
+                        <Typography>{ isObtained('お好み焼き　Okonomiyaki') ? 'お好み焼き　Okonomiyaki' : '???' }</Typography>
                     </Item>
-                    <Item onClick={ isObtained('udon') ? viewCard : null } sx={ isObtained('udon') ? { cursor: 'pointer' } : '' }>
+                    <Item onClick={ isObtained('スア・ガイ　Lao Chicken Noodle Soup') ? viewCard : null } sx={ isObtained('スア・ガイ　Lao Chicken Noodle Soup') ? { cursor: 'pointer' } : '' }>
                         <Image 
-                            src={ isObtained('udon') ? '/img/cook.png' : '/img/capsule_close4_red.png'}
+                            src={ isObtained('スア・ガイ　Lao Chicken Noodle Soup') ? '/img/sua_gai.jpg' : '/img/capsule_close4_red.png'}
                             width={100}
                             height={100}
-                            onClick={ isObtained('udon') ? viewCard : null }
+                            onClick={ isObtained('スア・ガイ　Lao Chicken Noodle Soup') ? viewCard : null }
                         />
-                        <Typography>{ isObtained('udon') ? 'udon' : '???' }</Typography>
+                        <Typography>{ isObtained('スア・ガイ　Lao Chicken Noodle Soup') ? 'スア・ガイ　Lao Chicken Noodle Soup' : '???' }</Typography>
                     </Item>
                     <Item sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Image 
@@ -246,7 +246,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                             height={100}
                         />
                         <Button onClick={ () => { 
-                            if (isObtained('天使の涙わらび餅 Angel\'s Tear Mochi') && isObtained('natto') && isObtained('natto')) {
+                            if (isObtained('天使の涙わらび餅 Angel\'s Tear Mochi') && isObtained('お好み焼き　Okonomiyaki') && isObtained('スア・ガイ　Lao Chicken Noodle Soup')) {
                                 revealFood();
                             } else {
                                 playAudio('/assets/locked_sfx.mp3'); 
