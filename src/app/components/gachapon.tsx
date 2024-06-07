@@ -54,6 +54,7 @@ import blue7 from '../../../public/img/gachapon_open7_blue7.png';
 
 import gachas from '../data/data';
 
+import playAudio from "../utils/playAudio";
 
 import { dropTargetForElements } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
 import { useRef, useEffect, useState } from "react";
@@ -122,11 +123,6 @@ export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setSho
     blue7
     ]);
 
-    function playAudio(sound) {
-        const audio = new Audio(sound);
-        audio.play();
-      }
-
     function revealSet(color) {
         switch (color) {
             case 'red':
@@ -154,9 +150,13 @@ export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setSho
             for (const pic of coinInsertAnimation) {
                 await sleep(75);
                 setImage(pic);
+                await sleep(0);
+                setImage(pic);
             }
             for (const pic of dispenseGachaAnimation) {
                 await sleep(75);
+                setImage(pic);
+                await sleep(0);
                 setImage(pic);
             }
 
@@ -186,23 +186,31 @@ export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setSho
                     for (const pic of greenAnimation) {
                         await sleep(75);
                         setImage(pic);
+                        await sleep(0);
+                        setImage(pic);
                     }
                     break;
-                case 'blue':
-                    for (const pic of blueAnimation) {
-                        await sleep(75);
-                        setImage(pic);
+                    case 'blue':
+                        for (const pic of blueAnimation) {
+                            await sleep(75);
+                            setImage(pic);
+                            await sleep(0);
+                            setImage(pic);
                     }
                     break;
                 case 'red':
                     for (const pic of redAnimation) {
                         await sleep(75);
                         setImage(pic);
+                        await sleep(0);
+                        setImage(pic);
                     }
                     break;
                 case 'yellow':
                     for (const pic of yellowAnimation) {
                         await sleep(75);
+                        setImage(pic);
+                        await sleep(0);
                         setImage(pic);
                     }
                     break;

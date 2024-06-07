@@ -5,6 +5,8 @@ import Paper from "@mui/material/Paper";
 import Image from "next/image";
 import Button from '@mui/material/Button';
 import { useState } from 'react';
+import playAudio from '../utils/playAudio';
+import Link from 'next/link';
 
 const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(1),
@@ -94,7 +96,13 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                             width={100}
                             height={100}
                         />
-                        <Button onClick={ isObtained('コックカービィChef Kirby') && isObtained('爆睡した馬　Napping Pony') && isObtained('ペコペコハム Hungy Hammy') ? revealChar : null }> 
+                        <Button onClick={ () => { 
+                            if (isObtained('コックカービィChef Kirby') && isObtained('爆睡した馬　Napping Pony') && isObtained('ペコペコハム Hungy Hammy')) {
+                                revealChar();
+                            } else {
+                                playAudio('/assets/locked_sfx.mp3'); 
+                            }}
+                        }> 
                             { unlockedRewardChar ? 'You\'ve Unlocked UGLY HAMSTER 3 LINE Sticker Pack! Go to LINE to claim your reward' : 'Collect キャラ・セット to Unlock!'}
                         </Button>
                     </Item>
@@ -132,12 +140,18 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                     </Item>
                     <Item sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Image 
-                            src={ unlockedRewardMusic ? '/img/hamster.png' : '/img/kirakira4.png'}
+                            src={ unlockedRewardMusic ? '/img/spotify.svg' : '/img/kirakira4.png'}
                             width={100}
                             height={100}
                         />
-                        <Button onClick={ isObtained('Seven') && isObtained('Hey, Soul Sister') && isObtained('Night Dancer') ? revealMusic : null }> 
-                            { unlockedRewardMusic ? 'You\'ve Unlocked ラブラブ Spotify Playlist! Go to Spotify to claim your reward' : 'Complete the set to Unlock!'}
+                        <Button onClick={ () => { 
+                            if (isObtained('Seven') && isObtained('Hey, Soul Sister') && isObtained('Night Dancer')) {
+                                revealMusic();
+                            } else {
+                                playAudio('/assets/locked_sfx.mp3'); 
+                            }}
+                        }> 
+                            { unlockedRewardMusic ? 'You\'ve Unlocked 夜の雰囲気 Playlist!' : 'Complete this set to Unlock!'}
                         </Button>
                     </Item>
                 </Stack>
@@ -178,7 +192,13 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                             width={100}
                             height={100}
                         />
-                        <Button onClick={ isObtained('Sweaty Sheepies') && isObtained('Bingo Bongo') && isObtained('test') ? revealMemory : null }> 
+                        <Button onClick={ () => { 
+                            if (isObtained('Sweaty Sheepies') && isObtained('Bingo Bongo') && isObtained('test')) {
+                                revealMemory();
+                            } else {
+                                playAudio('/assets/locked_sfx.mp3'); 
+                            }}
+                        }> 
                             { unlockedRewardMemory ? 'You\'ve Unlocked Anniversary Letter' : 'Collect All Gachas To Unlock!'}
                         </Button>
                     </Item>
@@ -220,8 +240,14 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                             width={100}
                             height={100}
                         />
-                        <Button onClick={ isObtained('天使の涙わらび餅 Angel\'s Tear Mochi') && isObtained('natto') && isObtained('natto') ? revealFood : null }> 
-                            { unlockedRewardFood ? 'You\'ve Unlocked UGLY HAMSTER 3 LINE Sticker Pack! Go to LINE to claim your reward' : 'Complete the set to Unlock!'}
+                        <Button onClick={ () => { 
+                            if (isObtained('天使の涙わらび餅 Angel\'s Tear Mochi') && isObtained('natto') && isObtained('natto')) {
+                                revealFood();
+                            } else {
+                                playAudio('/assets/locked_sfx.mp3'); 
+                            }}
+                        }> 
+                            { unlockedRewardFood ? 'You\'ve Unlocked UGLY HAMSTER 3 LINE Sticker Pack! Go to LINE to claim your reward' : 'Complete this set to Unlock!'}
                         </Button>
                     </Item>
                 </Stack>
