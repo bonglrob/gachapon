@@ -39,16 +39,20 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
 
     function revealChar() {
         setUnlockRewardChar(true);
+        playAudio('/assets/unlocked_sfx.mp3');
     }
     function revealMusic() {
         setUnlockRewardMusic(true);
+        playAudio('/assets/unlocked_sfx.mp3');
     }
     function revealFood() {
         setUnlockRewardFood(true);
+        playAudio('/assets/unlocked_sfx.mp3');
     }
     function revealMemory() {
         if (unlockedRewardChar && unlockedRewardMusic && unlockedRewardFood) {
             setUnlockRewardMemory(true);
+            playAudio('/assets/unlocked_sfx.mp3');
         }
     }
 
@@ -103,7 +107,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                                 playAudio('/assets/locked_sfx.mp3'); 
                             }}
                         }> 
-                            { unlockedRewardChar ? 'You\'ve Unlocked UGLY HAMSTER 3 LINE Sticker Pack! Go to LINE to claim your reward' : 'Collect キャラ・セット to Unlock!'}
+                            { unlockedRewardChar ? 'GOT HAMSTER LINE STICKER!' : 'Collect キャラ・セット to Unlock!'}
                         </Button>
                     </Item>
                 </Stack>
@@ -151,7 +155,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                                 playAudio('/assets/locked_sfx.mp3'); 
                             }}
                         }> 
-                            { unlockedRewardMusic ? 'You\'ve Unlocked 夜の雰囲気 Playlist!' : 'Complete this set to Unlock!'}
+                            { unlockedRewardMusic ? 'Got 夜の雰囲気 Playlist!' : 'Complete this set to Unlock!'}
                         </Button>
                     </Item>
                 </Stack>
@@ -187,6 +191,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                         <Typography>{ isObtained('test') ? 'test' : '???' }</Typography>
                     </Item>
                     <Item sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        { unlockedRewardMemory ? <Link href='#'></Link> : ''}
                         <Image 
                             src={ unlockedRewardMemory ? '/img/heartmail.png' : '/img/kirakira4.png'}
                             width={100}
@@ -236,7 +241,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                     </Item>
                     <Item sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                         <Image 
-                            src={ unlockedRewardFood ? '/img/hamster.png' : '/img/kirakira4.png'}
+                            src={ unlockedRewardFood ? '/img/present.png' : '/img/kirakira4.png'}
                             width={100}
                             height={100}
                         />
@@ -247,7 +252,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                                 playAudio('/assets/locked_sfx.mp3'); 
                             }}
                         }> 
-                            { unlockedRewardFood ? 'You\'ve Unlocked UGLY HAMSTER 3 LINE Sticker Pack! Go to LINE to claim your reward' : 'Complete this set to Unlock!'}
+                            { unlockedRewardFood ? 'GOT SWEETS DELIVERY' : 'Complete this set to Unlock!'}
                         </Button>
                     </Item>
                 </Stack>

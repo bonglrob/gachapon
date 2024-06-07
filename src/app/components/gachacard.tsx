@@ -10,6 +10,8 @@ import CancelIcon from '@mui/icons-material/Cancel';
 import styles from '../page.module.css';
 import gachaponPic from '../../../public/img/gachapon.png';
 
+import ReactPlayer from 'react-player';
+
 
 export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardView, setCoinInserted, setImage }) {
 
@@ -59,22 +61,24 @@ export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardVie
           }}>
           <CancelIcon color={color} sx={ { background: 'rgba(168, 168, 168, 0.25)', borderRadius: '100%' }}/>
         </Button>
-        <CardMedia
-          sx={{
-            // height: 233,
-            // width: 350,
-            // maxHeight: { mobile: 233, tablet: 167 },
-            // maxWidth: { mobile: 350, tablet: 250 },
-            height: {
-              mobile: '30vh',
-              tablet: '40vh',
-              laptop: '55vh',
-              desktop: '65vh',
-            },
-          }}
-          image={gacha[gachaName]['image']}
-          title={Object.keys(gacha)[0]}
-        />
+        { color === 'gachablue' ? <ReactPlayer controls={true} muted={false} playing={true} url={gacha[gachaName]['link']}/> :
+            <CardMedia
+              sx={{
+                // height: 233,
+                // width: 350,
+                // maxHeight: { mobile: 233, tablet: 167 },
+                // maxWidth: { mobile: 350, tablet: 250 },
+                height: {
+                  mobile: '30vh',
+                  tablet: '40vh',
+                  laptop: '55vh',
+                  desktop: '65vh',
+                },
+              }}
+              image={gacha[gachaName]['image']}
+              title={Object.keys(gacha)[0]}
+            />
+        }
       </div>
       <CardContent>
         <Typography variant="h5" component="div">

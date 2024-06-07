@@ -33,7 +33,7 @@ const gachas: Array<{ [key: string]: Object }> = [
                 I want the world to see you be, with me`,
             'image' : '/img/soul_sister_artwork.jpeg',
             'extra' : '',
-            'link' : ''
+            'link' : 'https://www.youtube.com/watch?v=kVpv8-5XWOI'
         }
     }, 
     {
@@ -47,7 +47,7 @@ const gachas: Array<{ [key: string]: Object }> = [
                 いられるのは 今だけか`,
             'image' : '/img/imase_album_artwork.jpg',
             'extra' : '',
-            'link' : ''
+            'link' : 'https://www.youtube.com/watch?v=kagoEGKHZvU'
         }
     }, 
     {
@@ -60,7 +60,7 @@ const gachas: Array<{ [key: string]: Object }> = [
                 I'll be lovin' you right"`,
             'image' : '/img/seven.jpeg',
             'extra' : '',
-            'link' : ''
+            'link' : 'https://youtu.be/QU9c0053UAU?si=ze_p6m-93kGvt8cr&t=9'
         }
     }, 
     {
