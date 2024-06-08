@@ -3,6 +3,7 @@
 import { Klee_One, Noto_Sans_JP } from "next/font/google";
 import { createTheme, PaletteColorOptions } from "@mui/material/styles";
 import Button, { ButtonPropsColorOverrides } from "@mui/material/Button";
+import { ChipProps as MuiChipProps } from "@mui/material/Chip";
 
 import '@fontsource/klee-one/400.css';
 import '@fontsource/klee-one/600.css';
@@ -52,6 +53,16 @@ declare module "@mui/material/Button" {
     outline: true;
   }
 }
+
+declare module '@mui/material/Chip' {
+  interface ChipPropsColorOverrides {
+    gachared: true;
+  }
+}
+
+// interface ChipProps extends MuiChipProps {
+//   color?: 'default' | 'primary' | 'secondary' | 'error' | 'info' | 'success' | 'warning' | 'gachared' | 'gachablue' | 'gachayellow' | 'gachagreen';
+// }
 
 const { palette } = createTheme();
 const theme = createTheme({

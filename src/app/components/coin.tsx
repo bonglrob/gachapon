@@ -7,8 +7,21 @@ import { useRef, useEffect, useState } from "react";
 import {draggable} from '@atlaskit/pragmatic-drag-and-drop/element/adapter';
 import invariant from 'tiny-invariant';
 
+type GachaItem = {
+  color: string;
+  link: string;
+  image: string;
+  subtitle: string;
+  description: string;
+  extra: string;
+};
 
-export default function Coin({ coinInserted, remainingGachas }){
+type CoinProps = {
+  coinInserted: boolean;
+  remainingGachas: {[key: string]: GachaItem;}[];
+};
+
+export default function Coin({ coinInserted, remainingGachas }: CoinProps ){
   const ref = useRef(null);
   const [dragging, setDragging] = useState<boolean>(false);
 
@@ -24,7 +37,7 @@ export default function Coin({ coinInserted, remainingGachas }){
   }, []);
 
   return (
-    <div className={ remainingGachas == 0 || coinInserted ? styles.hidden : styles.alignRight}>
+    <div className={ remainingGachas.length === 0 || coinInserted ? styles.hidden : styles.alignRight}>
       <Image
         src={coinImage}
         alt="picture of 100 yen coin"

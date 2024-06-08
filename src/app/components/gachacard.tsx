@@ -9,11 +9,30 @@ import { Button, Link } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 import styles from '../page.module.css';
 import gachaponPic from '../../../public/img/gachapon.png';
+import { Dispatch, SetStateAction } from 'react';
 
 import ReactPlayer from 'react-player';
+import { StaticImageData } from 'next/image';
 
+type GachaItem = {
+  color: string;
+  link: string;
+  image: string;
+  subtitle: string;
+  description: string;
+  extra: string;
+};
 
-export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardView, setCoinInserted, setImage }) {
+type GachaCardProps = {
+  setHideGachaSet: Dispatch<SetStateAction<boolean>>;
+  gacha: { [key: string]: GachaItem };
+  cardView: boolean;
+  setCardView: Dispatch<SetStateAction<boolean>>;
+  setCoinInserted: Dispatch<SetStateAction<boolean>>;
+  setImage: Dispatch<SetStateAction<StaticImageData>>;
+};
+
+export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardView, setCoinInserted, setImage }: GachaCardProps ) {
 
   const gachaName = Object.keys(gacha)[0];
 
@@ -42,11 +61,12 @@ export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardVie
   return (
     <Card className={cardView ? styles.gachaCard : styles.hidden} sx={ { width: { mobile: '60vw', tablet: '35vw', laptop: '45vw'}} }>
       <div style={{ position: 'relative' }}>
-        <Chip size='small' label={label} color={color} sx={{
+        <Chip size='small' color={color} label={label} sx={{
           position: 'absolute',
           left: '0.5rem',
           top: '0.5rem',
-        }}/> 
+        }}>
+        </Chip>
         <Button 
           onClick={() => {
             setCardView(false);

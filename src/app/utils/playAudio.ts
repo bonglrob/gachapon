@@ -1,4 +1,4 @@
-function playAudio(sound) {
+function playAudio(sound: string) {
     const audio = new Audio(sound);
     audio.play();
   }

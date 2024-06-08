@@ -1,4 +1,13 @@
-const gachas: Array<{ [key: string]: Object }> = [
+type GachaItem = {
+    color: string;
+    link: string;
+    image: string;
+    subtitle: string;
+    description: string;
+    extra: string;
+  };
+
+const gachas: { [key: string]: GachaItem }[] = [
     {
         'ペコペコハム Hungy Hammy': {
             'color' : 'yellow',

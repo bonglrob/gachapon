@@ -9,20 +9,33 @@ import GachaSet from "./components/GachaSet";
 import gachaponPic from '../../public/img/gachapon.png';
 import gachas from '../app/data/data';
 
+type GachaItem = {
+  color: string;
+  link: string;
+  image: string;
+  subtitle: string;
+  description: string;
+  extra: string;
+};
 
 export default function Home() {
+  const initialRemainingGachas: { [key: string]: GachaItem }[] = gachas.map(gacha => {
+    const key = Object.keys(gacha)[0];
+    return { [key]: gacha[key] };
+});
+
   const [cardView, setCardView] = useState(false);
   const [coinInserted, setCoinInserted] = useState(false);
   const [sourceImage, setImage] = useState(gachaponPic);
-  const [collectedGachas, setCollectedGachas] = useState([]);
-  const [remainingGachas, setRemainingGachas] = useState(gachas);
+  const [collectedGachas, setCollectedGachas] = useState([{}]);
+  const [remainingGachas, setRemainingGachas] = useState<{ [key: string]: GachaItem }[]>(initialRemainingGachas);
   const [hideGachaSet, setHideGachaSet] = useState(true);
   const [gacha, setGacha] = useState(gachas[0]);
 
-  const [showBlue, setShowBlue] = useState(false);
-  const [showYellow, setShowYellow] = useState(false);
-  const [showGreen, setShowGreen] = useState(false);
-  const [showRed, setShowRed] = useState(false);
+  const [showBlue, setShowBlue] = useState<boolean>(false);
+  const [showYellow, setShowYellow] = useState<boolean>(false);
+  const [showGreen, setShowGreen] = useState<boolean>(false);
+  const [showRed, setShowRed] = useState<boolean>(false);
 
 
   return (

@@ -57,13 +57,41 @@ import gachas from '../data/data';
 import playAudio from "../utils/playAudio";
 
 import { dropTargetForElements } from "@atlaskit/pragmatic-drag-and-drop/element/adapter";
-import { useRef, useEffect, useState } from "react";
+import { useRef, useEffect, useState, Dispatch, SetStateAction } from "react";
+import { StaticImageData } from "next/image";
 import invariant from "tiny-invariant";
 import styles from '../page.module.css';
 
-export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setShowYellow, setGacha, setHideGachaSet, cardView, setCardView, setCoinInserted, sourceImage, setImage, remainingGachas, collectedGachas, setCollectedGachas, setRemainingGachas }) {
+type GachaItem = {
+    color: string;
+    link: string;
+    image: string;
+    subtitle: string;
+    description: string;
+    extra: string;
+  };
+  
+  type GachaponProps = {
+    setShowRed: Dispatch<SetStateAction<boolean>>;
+    setShowBlue: Dispatch<SetStateAction<boolean>>;
+    setShowGreen: Dispatch<SetStateAction<boolean>>;
+    setShowYellow: Dispatch<SetStateAction<boolean>>;
+    setGacha: Dispatch<SetStateAction<{[key: string]: GachaItem;}>>;
+    setHideGachaSet: Dispatch<SetStateAction<boolean>>;
+    cardView: boolean;
+    setCardView: Dispatch<SetStateAction<boolean>>;
+    setCoinInserted: Dispatch<SetStateAction<boolean>>;
+    sourceImage: StaticImageData;
+    setImage: Dispatch<SetStateAction<StaticImageData>>;
+    remainingGachas: {[key: string]: GachaItem;}[];
+    setRemainingGachas: Dispatch<SetStateAction<{[key: string]: GachaItem;}[]>>;
+    collectedGachas: {}[];
+    setCollectedGachas: Dispatch<SetStateAction<{}[]>>;
+  };
 
-    function sleep(ms) {
+export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setShowYellow, setGacha, setHideGachaSet, cardView, setCardView, setCoinInserted, sourceImage, setImage, remainingGachas, collectedGachas, setCollectedGachas, setRemainingGachas }: GachaponProps) {
+
+    function sleep(ms: number) {
         return new Promise(resolve => setTimeout(resolve, ms));
       }
       
@@ -123,7 +151,7 @@ export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setSho
     blue7
     ]);
 
-    function revealSet(color) {
+    function revealSet(color: string) {
         switch (color) {
             case 'red':
                 setShowRed(true);
@@ -141,7 +169,7 @@ export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setSho
     }
 
     const handleClick = async () => {
-        function getRandomInt(max) {
+        function getRandomInt(max: number) {
             return Math.floor(Math.random() * max);
           }
 
