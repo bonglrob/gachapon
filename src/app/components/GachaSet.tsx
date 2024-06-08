@@ -191,7 +191,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                         <Typography>{ isObtained('Next Chapter') ? 'Next Chapter' : '???' }</Typography>
                     </Item>
                     <Item sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        { unlockedRewardMemory ? <Link href='#'></Link> : ''}
+                        { unlockedRewardMemory ? <Link target='_blank' href='letter'></Link> : ''}
                         <Image 
                             src={ unlockedRewardMemory ? '/img/heartmail.png' : '/img/kirakira4.png'}
                             width={100}
