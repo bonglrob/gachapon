@@ -23,9 +23,6 @@ export default function RootLayout({
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>
             {children}
-            {/* <audio src={ sound2 } controls> */}
-              {/* src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/858/outfoxing.mp3" */}
-            {/* </audio> */}
           </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
