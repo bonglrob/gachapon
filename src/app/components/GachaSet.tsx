@@ -6,7 +6,6 @@ import Image from "next/image";
 import Button from '@mui/material/Button';
 import { useState } from 'react';
 import playAudio from '../utils/playAudio';
-import Link from 'next/link';
 
 const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(1),
@@ -191,7 +190,6 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                         <Typography>{ isObtained('Next Chapter') ? 'Next Chapter' : '???' }</Typography>
                     </Item>
                     <Item sx={ { display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        { unlockedRewardMemory ? <Link target='_blank' href='letter'></Link> : ''}
                         <Image 
                             src={ unlockedRewardMemory ? '/img/heartmail.png' : '/img/kirakira4.png'}
                             width={100}
@@ -204,7 +202,7 @@ export default function GachaSet({ showBlue, showGreen, showRed, showYellow, set
                                 playAudio('/assets/locked_sfx.mp3'); 
                             }}
                         }> 
-                            { unlockedRewardMemory ? 'You\'ve Unlocked Anniversary Letter' : 'Collect All Gachas To Unlock!'}
+                            { unlockedRewardMemory ? 'Unlocked Anniversary Letters' : 'Collect All Gachas To Unlock!'}
                         </Button>
                     </Item>
                 </Stack>

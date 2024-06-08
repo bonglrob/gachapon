@@ -132,17 +132,7 @@ const gachas: Array<{ [key: string]: Object }> = [
             'extra' : '', 
             'link' : ''
         }
-    }, 
-    // {
-    //     'hamster ペコペコハム': {
-    //         'color' :
-    //         'subtitle' : 
-    //         'description' : 
-    //         'image' : 
-    //         'extra' : 
-    //         'link' : 
-    //     }
-    // }, 
+    }
 ]
 
 export default gachas; 
