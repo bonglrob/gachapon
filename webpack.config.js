@@ -1,4 +1,6 @@
 module.exports = {
+    assetPrefix: '',
+    basePath: '',
     module: {
       rules: [
         {

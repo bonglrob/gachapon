@@ -6,7 +6,7 @@ import Gachapon from "./components/gachapon";
 import GachaCard from "./components/gachacard";
 import { useState } from "react";
 import GachaSet from "./components/GachaSet";
-import gachaponPic from '../../public/img/gachapon.png';
+import gachaponPic from '@/gachapon.png';
 import gachas from '../app/data/data';
 
 type GachaItem = {

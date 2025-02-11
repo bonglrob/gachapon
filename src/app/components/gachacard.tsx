@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import { Button, Link } from '@mui/material';
 import CancelIcon from '@mui/icons-material/Cancel';
 import styles from '../page.module.css';
-import gachaponPic from '../../../public/img/gachapon.png';
+import gachaponPic from '@/gachapon.png';
 import { Dispatch, SetStateAction } from 'react';
 
 import ReactPlayer from 'react-player';
@@ -61,7 +61,7 @@ export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardVie
   return (
     <Card className={cardView ? styles.gachaCard : styles.hidden} sx={ { width: { mobile: '60vw', tablet: '35vw', laptop: '45vw'}} }>
       <div style={{ position: 'relative' }}>
-        <Chip size='small' color={color} label={label} sx={{
+        <Chip size='small' label={label} sx={{
           position: 'absolute',
           left: '0.5rem',
           top: '0.5rem',
@@ -79,7 +79,7 @@ export default function GachaCard({ setHideGachaSet, gacha, cardView, setCardVie
             right: '0.25rem',
             top: '0.25rem',
           }}>
-          <CancelIcon color={color} sx={ { background: 'rgba(168, 168, 168, 0.25)', borderRadius: '100%' }}/>
+          <CancelIcon sx={ { background: 'rgba(168, 168, 168, 0.25)', borderRadius: '100%' }}/>
         </Button>
         { color === 'gachablue' ? <ReactPlayer controls={true} muted={false} playing={true} url={gacha[gachaName]['link']}/> :
             <CardMedia

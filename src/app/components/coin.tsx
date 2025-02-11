@@ -1,7 +1,7 @@
 'use client';
 
 import Image from "next/image";
-import coinImage from '../../../public/img/money_coin_reiwa_100.png';
+import coinImage from '@/money_coin_reiwa_100.png';
 import styles from '../page.module.css';
 import { useRef, useEffect, useState } from "react";
 import {draggable} from '@atlaskit/pragmatic-drag-and-drop/element/adapter';

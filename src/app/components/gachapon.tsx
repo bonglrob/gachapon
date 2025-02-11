@@ -3,54 +3,54 @@
 import Image from "next/image";
 
 // coin insert animation
-import gachaponCoinInsert from '../../../public/img/coin-insert-1.png';
-import gachaponCoinInsert2 from '../../../public/img/coin-insert-2.png';
-import gachaponCoinInsert3 from '../../../public/img/coin-insert-3.png';
-import gachaponCoinInsert4 from '../../../public/img/coin-insert-4.png';
+import gachaponCoinInsert from '@/coin-insert-1.png';
+import gachaponCoinInsert2 from '@/coin-insert-2.png';
+import gachaponCoinInsert3 from '@/coin-insert-3.png';
+import gachaponCoinInsert4 from '@/coin-insert-4.png';
 
 // gacha dispense animation
-import dispenseGacha1 from '../../../public/img/gachapon_open1.png'
-import dispenseGacha2 from '../../../public/img/gachapon_open2.png'
-import dispenseGacha3 from '../../../public/img/gachapon_open3.png'
-import dispenseGacha4 from '../../../public/img/gachapon_open4.png'
-import dispenseGacha5 from '../../../public/img/gachapon_open5.png'
-import dispenseGacha6 from '../../../public/img/gachapon_open6.png'
+import dispenseGacha1 from '@/gachapon_open1.png'
+import dispenseGacha2 from '@/gachapon_open2.png'
+import dispenseGacha3 from '@/gachapon_open3.png'
+import dispenseGacha4 from '@/gachapon_open4.png'
+import dispenseGacha5 from '@/gachapon_open5.png'
+import dispenseGacha6 from '@/gachapon_open6.png'
 
 // red capsule dispense animation
-import red1 from '../../../public/img/gachapon_open7_red1.png'
-import red2 from '../../../public/img/gachapon_open7_red2.png';
-import red3 from '../../../public/img/gachapon_open7_red3.png';
-import red4 from '../../../public/img/gachapon_open7_red4.png';
-import red5 from '../../../public/img/gachapon_open7_red5.png';
-import red6 from '../../../public/img/gachapon_open7_red6.png';
-import red7 from '../../../public/img/gachapon_open7_red7.png';
+import red1 from '@/gachapon_open7_red1.png'
+import red2 from '@/gachapon_open7_red2.png';
+import red3 from '@/gachapon_open7_red3.png';
+import red4 from '@/gachapon_open7_red4.png';
+import red5 from '@/gachapon_open7_red5.png';
+import red6 from '@/gachapon_open7_red6.png';
+import red7 from '@/gachapon_open7_red7.png';
 
 // green capsule dispense animation
-import green1 from '../../../public/img/gachapon_open7_green1.png';
-import green2 from '../../../public/img/gachapon_open7_green2.png';
-import green3 from '../../../public/img/gachapon_open7_green3.png';
-import green4 from '../../../public/img/gachapon_open7_green4.png';
-import green5 from '../../../public/img/gachapon_open7_green5.png';
-import green6 from '../../../public/img/gachapon_open7_green6.png';
-import green7 from '../../../public/img/gachapon_open7_green7.png';
+import green1 from '@/gachapon_open7_green1.png';
+import green2 from '@/gachapon_open7_green2.png';
+import green3 from '@/gachapon_open7_green3.png';
+import green4 from '@/gachapon_open7_green4.png';
+import green5 from '@/gachapon_open7_green5.png';
+import green6 from '@/gachapon_open7_green6.png';
+import green7 from '@/gachapon_open7_green7.png';
 
 // yellow capsule dispense animation
-import yellow1 from '../../../public/img/gachapon_open7_yellow1.png';
-import yellow2 from '../../../public/img/gachapon_open7_yellow2.png';
-import yellow3 from '../../../public/img/gachapon_open7_yellow3.png';
-import yellow4 from '../../../public/img/gachapon_open7_yellow4.png';
-import yellow5 from '../../../public/img/gachapon_open7_yellow5.png';
-import yellow6 from '../../../public/img/gachapon_open7_yellow6.png';
-import yellow7 from '../../../public/img/gachapon_open7_yellow7.png';
+import yellow1 from '@/gachapon_open7_yellow1.png';
+import yellow2 from '@/gachapon_open7_yellow2.png';
+import yellow3 from '@/gachapon_open7_yellow3.png';
+import yellow4 from '@/gachapon_open7_yellow4.png';
+import yellow5 from '@/gachapon_open7_yellow5.png';
+import yellow6 from '@/gachapon_open7_yellow6.png';
+import yellow7 from '@/gachapon_open7_yellow7.png';
 
 // blue capsule dispense animation
-import blue1 from '../../../public/img/gachapon_open7_blue1.png';
-import blue2 from '../../../public/img/gachapon_open7_blue2.png';
-import blue3 from '../../../public/img/gachapon_open7_blue3.png';
-import blue4 from '../../../public/img/gachapon_open7_blue4.png';
-import blue5 from '../../../public/img/gachapon_open7_blue5.png';
-import blue6 from '../../../public/img/gachapon_open7_blue6.png';
-import blue7 from '../../../public/img/gachapon_open7_blue7.png';
+import blue1 from '@/gachapon_open7_blue1.png';
+import blue2 from '@/gachapon_open7_blue2.png';
+import blue3 from '@/gachapon_open7_blue3.png';
+import blue4 from '@/gachapon_open7_blue4.png';
+import blue5 from '@/gachapon_open7_blue5.png';
+import blue6 from '@/gachapon_open7_blue6.png';
+import blue7 from '@/gachapon_open7_blue7.png';
 
 import gachas from '../data/data';
 
@@ -278,8 +278,9 @@ export default function Gachapon({ setShowRed, setShowBlue, setShowGreen, setSho
                 className={isDraggedOver ? `${styles.gachapon} ${styles.gachaponActive}` : styles.gachapon}
                 ref={ref}
                 onClick={ handleClick }
-                width={533}
-                height={742}
+                width={323} //  323 533
+                height={498} // 498 742
+                layout="intrinsic"
             priority
             />
         </div>
