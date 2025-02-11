@@ -1,95 +1,54 @@
-import Image from "next/image";
+'use client';
+
 import styles from "./page.module.css";
+import Coin from "./components/coin";
+import Gachapon from "./components/gachapon";
+import GachaCard from "./components/gachacard";
+import { useState } from "react";
+import GachaSet from "./components/GachaSet";
+import gachaponPic from '@/gachapon.png';
+import gachas from '../app/data/data';
+
+type GachaItem = {
+  color: string;
+  link: string;
+  image: string;
+  subtitle: string;
+  description: string;
+  extra: string;
+};
 
 export default function Home() {
+  const initialRemainingGachas: { [key: string]: GachaItem }[] = gachas.map(gacha => {
+    const key = Object.keys(gacha)[0];
+    return { [key]: gacha[key] };
+});
+
+  const [cardView, setCardView] = useState(false);
+  const [coinInserted, setCoinInserted] = useState(false);
+  const [sourceImage, setImage] = useState(gachaponPic);
+  const [collectedGachas, setCollectedGachas] = useState([{}]);
+  const [remainingGachas, setRemainingGachas] = useState<{ [key: string]: GachaItem }[]>(initialRemainingGachas);
+  const [hideGachaSet, setHideGachaSet] = useState(true);
+  const [gacha, setGacha] = useState(gachas[0]);
+
+  const [showBlue, setShowBlue] = useState<boolean>(false);
+  const [showYellow, setShowYellow] = useState<boolean>(false);
+  const [showGreen, setShowGreen] = useState<boolean>(false);
+  const [showRed, setShowRed] = useState<boolean>(false);
+
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+      <main className={styles.main}>
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+        <Coin remainingGachas={ remainingGachas } coinInserted={ coinInserted }></Coin>
 
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
+        <Gachapon setShowBlue={ setShowBlue } setShowGreen={ setShowGreen } setShowRed={ setShowRed } setShowYellow={ setShowYellow } setGacha= { setGacha } setHideGachaSet={ setHideGachaSet} cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted } sourceImage={ sourceImage } setImage={ setImage } remainingGachas={ remainingGachas } collectedGachas={ collectedGachas } setRemainingGachas={ setRemainingGachas} setCollectedGachas={ setCollectedGachas }></Gachapon>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
+        <GachaCard setHideGachaSet={ setHideGachaSet } gacha={ gacha } cardView={ cardView } setCardView={ setCardView } setCoinInserted={ setCoinInserted } setImage={ setImage }></GachaCard>
+        
+        <GachaSet showBlue={ showBlue } showGreen={ showGreen } showRed={ showRed } showYellow={ showYellow } setGacha={ setGacha } hideGachaSet={ hideGachaSet } cardView={ cardView } setCardView={ setCardView } collectedGachas={ collectedGachas }></GachaSet>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+      </main>
   );
 }

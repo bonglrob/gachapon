@@ -3,40 +3,8 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  padding: 6rem;
+  padding: 3rem;
   min-height: 100vh;
-}
-
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
-}
-
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
-}
-
-.code {
-  font-weight: 700;
-  font-family: var(--font-mono);
 }
 
 .grid {
@@ -73,12 +41,90 @@
   text-wrap: balance;
 }
 
+.alignRight {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 3rem;
+  top: 3rem;
+}
+
+.coin {
+  width: 100%;
+  height: auto;
+}
+
+.coin:hover {
+  border-radius: 100%;
+  background-color: var(--outline);
+  cursor: grab;
+}
+
+.coinActive {
+  opacity: 0.4;
+}
+
+.hidden {
+  display: none;
+}
+
+.gachaCard {
+  animation: scaleUp 0.80s ease-in-out forwards;
+}
+
+@keyframes scaleUp {
+  0% {
+      transform: scale(0.25);
+  }
+  100% {
+      transform: scale(1.0);
+  }
+}
+
+.gachaSetPreview {
+  border: solid;
+  flex: 1 0 45%;
+  border-radius: 1%;
+  padding: 2%;
+  margin: 1%;
+}
+
+.characterColor {
+  border-color: #F9B300;
+  background-color: #fad44f;
+}
+
+.musicColor {
+  border-color: #0084CB;
+  background-color: #28b2f0;
+}
+
+.memoryColor {
+  border-color: #82BA1B;
+  background-color: #C2DC95;
+}
+
+.foodColor {
+  border-color: #E6392D;
+  background-color: #E7736E;
+}
+
+.gachapon {
+  width: 100%;
+  height: auto;
+}
+
+.gachaponActive {
+  background-color: yellow;
+}
+
 .center {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
   padding: 4rem 0;
+  cursor: pointer;
 }
 
 .center::before {
@@ -87,6 +133,7 @@
   width: 480px;
   height: 360px;
   margin-left: -400px;
+  z-index: -1;
 }
 
 .center::after {
@@ -105,9 +152,6 @@
   transform: translateZ(0);
 }
 
-.logo {
-  position: relative;
-}
 /* Enable hover only on non-touch devices */
 @media (hover: hover) and (pointer: fine) {
   .card:hover {
@@ -207,16 +251,6 @@
 @media (min-width: 701px) and (max-width: 1120px) {
   .grid {
     grid-template-columns: repeat(2, 50%);
-  }
-}
-
-@media (prefers-color-scheme: dark) {
-  .vercelLogo {
-    filter: invert(1);
-  }
-
-  .logo {
-    filter: invert(1) drop-shadow(0 0 0.3rem #ffffff70);
   }
 }
 
